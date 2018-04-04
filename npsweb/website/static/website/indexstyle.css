@@ -1,0 +1,83 @@
+/*This ensures that padding and margin are zero at default*/
+*{
+	margin: 0px;
+	padding: 0px;
+}
+html{
+
+background-image: url("https://s3.amazonaws.com/cosc-412-s3/ParkImage_10.jpg");
+background-size: 100%;
+background-repeat: no-repeat;
+background-position: center;
+margin: 25px 25px 25px 25px;
+padding-bottom:40px;
+padding-top: 40px;
+position: center;
+height: 100%
+}
+body{
+text-align:center;
+background: #f6f5f4;
+width: 1200px;
+vertical-align: middle;
+margin: 0 auto;
+padding-top: 20px;
+}
+
+/*Menu Styling */
+
+ul{
+list-style-type: none;
+padding: 0;
+margin: auto 10px auto 10px;
+overflow: hidden;
+background-color: grey;
+top: 100px;
+}
+
+li{
+float:left;
+border-right:1px solid white;
+
+}
+
+li:last-child{
+border-right: none;
+
+}
+li a{
+	display: block;
+	color: white;
+	text-align:center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+a{
+display: block;
+background-color: grey;
+padding: 8px 16px;
+text-decoration: none;
+}
+
+li a:hover{
+background-color: #dddddd;
+color: black;
+}
+
+.active{
+background-color: #4CAF50;
+color: black;
+}
+
+/* Centered text */
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.float-right{
+    float:right;
+    top: 50%;
+    left: 50%;
+}
