@@ -1,5 +1,5 @@
 # COSC412WebServer
-Web framework for COSC412 Group 2 project. Using Python Django
+Web framework for COSC412 Group 2 project. Using Python3 Django
 
 TODO: 
 * Add Elasticsearch api (with access keys?)
