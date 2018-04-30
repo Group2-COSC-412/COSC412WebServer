@@ -23,7 +23,7 @@ def esGET(request):
         verify_certs=True,
         connection_class=RequestsHttpConnection
     )
-    return HttpResponse("<p>successful connection!</p>")
+    return HttpResponse('{\n"comment": "example comment on a park that we pulled from the database"}')
 
 
 def esPOST(request):
@@ -43,4 +43,4 @@ def esPOST(request):
         verify_certs=True,
         connection_class=RequestsHttpConnection
     )
-    return HttpResponse("<p>successful connection!</p>")
+    return HttpResponse('')
