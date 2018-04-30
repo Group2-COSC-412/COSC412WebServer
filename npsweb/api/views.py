@@ -5,6 +5,7 @@ from requests_aws4auth import AWS4Auth
 
 # Create your views here.
 
+
 def esGET(request):
     keys = open("/home/ubuntu/keys/Django-User-AWS.key", 'r')
     aws_key = keys.readline().replace('\n', '')
@@ -23,6 +24,7 @@ def esGET(request):
         connection_class=RequestsHttpConnection
     )
     return HttpResponse("<p>successful connection!</p>")
+
 
 def esPOST(request):
     keys = open("/home/ubuntu/keys/Django-User-AWS.key", 'r')
