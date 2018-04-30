@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import HttpResponse
 from elasticsearch import Elasticsearch, RequestsHttpConnection
 from requests_aws4auth import AWS4Auth
 
@@ -21,7 +22,7 @@ def esGET(request):
         verify_certs=True,
         connection_class=RequestsHttpConnection
     )
-    return "<p>successful connection!</p>"
+    return HttpResponse("<p>successful connection!</p>")
 
 def esPOST(request):
     keys = open("/home/ubuntu/keys/Django-User-AWS.key", 'r')
@@ -40,4 +41,4 @@ def esPOST(request):
         verify_certs=True,
         connection_class=RequestsHttpConnection
     )
-    return "<p>successful connection!</p>"
+    return HttpResponse("<p>successful connection!</p>")
