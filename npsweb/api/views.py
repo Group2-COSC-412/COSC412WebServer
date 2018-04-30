@@ -2,11 +2,12 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from elasticsearch import Elasticsearch, RequestsHttpConnection
 from requests_aws4auth import AWS4Auth
+from django.http import HttpRequest
 
 # Create your views here.
 
 
-def esGET(request):
+def esGET(request: HttpRequest):
     keys = open("/home/ubuntu/keys/Django-User-AWS.key", 'r')
     aws_key = keys.readline().replace('\n', '')
     aws_secret = keys.readline().replace('\n', '')
@@ -26,7 +27,7 @@ def esGET(request):
     return HttpResponse('{"comment": "example comment on a park that we pulled from the database"}')
 
 
-def esPOST(request):
+def esPOST(request: HttpRequest):
     keys = open("/home/ubuntu/keys/Django-User-AWS.key", 'r')
     aws_key = keys.readline().replace('\n', '')
     aws_secret = keys.readline().replace('\n', '')
