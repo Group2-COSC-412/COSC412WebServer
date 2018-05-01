@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="03e4180d-bb76-43c7-b79c-5172c71fd2d8" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/npsweb/auth/views.py" afterPath="$PROJECT_DIR$/npsweb/auth/views.py" />
-      <change beforePath="$PROJECT_DIR$/npsweb/npsweb/urls.py" afterPath="$PROJECT_DIR$/npsweb/npsweb/urls.py" />
-      <change beforePath="$PROJECT_DIR$/npsweb/website/templates/website/index.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/npsweb/website/urls.py" afterPath="$PROJECT_DIR$/npsweb/website/urls.py" />
-      <change beforePath="$PROJECT_DIR$/npsweb/website/views.py" afterPath="$PROJECT_DIR$/npsweb/website/views.py" />
+      <change beforePath="$PROJECT_DIR$/npsweb/npsweb/settings.py" afterPath="$PROJECT_DIR$/npsweb/npsweb/settings.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -40,11 +35,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/npsweb/npsweb/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="310">
+              <caret line="26" column="12" lean-forward="false" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/npsweb/website/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="10" column="64" lean-forward="false" selection-start-line="10" selection-start-column="64" selection-end-line="10" selection-end-column="64" />
+            <state relative-caret-position="270">
+              <caret line="15" column="57" lean-forward="true" selection-start-line="15" selection-start-column="57" selection-end-line="15" selection-end-column="57" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -78,7 +83,6 @@
         <option value="$PROJECT_DIR$/npsweb/website/templates/website/index.html" />
         <option value="$PROJECT_DIR$/application.wsgi" />
         <option value="$PROJECT_DIR$/npsweb/npsweb/secretkey.py" />
-        <option value="$PROJECT_DIR$/npsweb/npsweb/settings.py" />
         <option value="$PROJECT_DIR$/npsweb/auth/urls.py" />
         <option value="$PROJECT_DIR$/npsweb/api/views.py" />
         <option value="$PROJECT_DIR$/npsweb/api/urls.py" />
@@ -86,6 +90,7 @@
         <option value="$PROJECT_DIR$/npsweb/npsweb/urls.py" />
         <option value="$PROJECT_DIR$/npsweb/website/urls.py" />
         <option value="$PROJECT_DIR$/npsweb/website/views.py" />
+        <option value="$PROJECT_DIR$/npsweb/npsweb/settings.py" />
       </list>
     </option>
   </component>
@@ -592,13 +597,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/npsweb/npsweb/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1005">
-          <caret line="83" column="0" lean-forward="true" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/npsweb/auth/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -649,6 +647,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/npsweb/website/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" column="57" lean-forward="true" selection-start-line="15" selection-start-column="57" selection-end-line="15" selection-end-column="57" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/npsweb/website/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
@@ -657,13 +665,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/npsweb/website/views.py">
+    <entry file="file://$PROJECT_DIR$/npsweb/npsweb/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="64" lean-forward="false" selection-start-line="10" selection-start-column="64" selection-end-line="10" selection-end-column="64" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="310">
+          <caret line="26" column="12" lean-forward="false" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="12" />
+          <folding />
         </state>
       </provider>
     </entry>
