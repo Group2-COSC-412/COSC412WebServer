@@ -37,4 +37,4 @@ if __name__ == "__main__":
              }
     }
 
-    esnode.search(index=None, body=str(query).replace('\'', '\"'))
+    print(esnode.search(index=None, body=str(query).replace('\'', '\"')))
