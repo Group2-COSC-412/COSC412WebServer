@@ -1,5 +1,6 @@
 from elasticsearch import Elasticsearch, RequestsHttpConnection
 from requests_aws4auth import AWS4Auth
+import time
 
 if __name__ == "__main__":
     keys = open("/home/ubuntu/keys/Django-User-AWS.key", 'r')
@@ -20,21 +21,25 @@ if __name__ == "__main__":
     )
 
     for i in range(20):
-        review = {"rating": (i % 5) + 1,
+        review = {"time": time.time(),
+                  "rating": (i % 5) + 1,
                   "parkid": i,
                   "review": "I liked this park. This is an example review for park number " + str(i),
                   "user": "cgood"}
 
-        comment = {"picture_id": i*i,
+        comment = {"time": time.time(),
+                   "picture_id": i*i,
                    "user": "cgood",
                    "comment": "Wow! great picture for picture id " + str(i*i)}
 
-        picture = {"picture_url": "https://s3.amazonaws.com/cosc-412-s3/ParkImage_" + str(i) + ".jpg",
+        picture = {"time": time.time(),
+                   "picture_url": "https://s3.amazonaws.com/cosc-412-s3/ParkImage_" + str(i) + ".jpg",
                    "user": "cgood",
                    "picture_id": i*i,
                    "parkid": i}
 
-        park = {"parkid": i,
+        park = {"time": time.time(),
+                "parkid": i,
                 "location": "123 Fake RD, Not a Town, State 12345",
                 "Name": "National Park " + str(i + 1)}
         esnode.index(index="reviews", doc_type="review", body=str(review).replace('\'', '\"'))
