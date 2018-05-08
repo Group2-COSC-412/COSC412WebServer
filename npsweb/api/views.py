@@ -10,7 +10,9 @@ from django.contrib.auth.decorators import login_required
 
 @login_required(login_url="/auth/login/")
 def es(request: HttpRequest):
-    if request.method == "GET":
+    if request.method == "GET" and\
+            "index" in request.GET and\
+            "parkid" in request.GET:
         keys = open("/home/ubuntu/keys/Django-User-AWS.key", 'r')
         aws_key = keys.readline().replace('\n', '')
         aws_secret = keys.readline().replace('\n', '')
@@ -27,6 +29,10 @@ def es(request: HttpRequest):
             verify_certs=True,
             connection_class=RequestsHttpConnection
         )
+
+        query = {}
+        esresponse = esnode.search(index=request.GET.get("index"), body=str(query).replace('\'', '\"'))
+
         return HttpResponse('{"comment": "example comment on a park that we pulled from the database"}')
 
     elif request.method == "POST":
