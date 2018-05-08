@@ -46,3 +46,4 @@ if __name__ == "__main__":
         esnode.index(index="comment", doc_type="comment", body=str(comment).replace('\'', '\"'))
         esnode.index(index="picture", doc_type="picture", body=str(picture).replace('\'', '\"'))
         esnode.index(index="park", doc_type="park", body=str(park).replace('\'', '\"'))
+        time.sleep(1)
