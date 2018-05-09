@@ -11,6 +11,8 @@ def empty(request):
     return redirect('https://national-parks.fcgit.net/home/index')
 
 
-def index(request):
-    template = loader.get_template('website/index.html')
+def index(request, file: str):
+    if not file.endswith(".html"):
+        file += ".html"
+    template = loader.get_template('website/'+file)
     return HttpResponse(template.render(request=request))
