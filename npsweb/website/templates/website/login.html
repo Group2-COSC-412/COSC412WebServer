@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<!--
+Template Name: Geodarn
+Author: <a href="http://www.os-templates.com/">OS Templates</a>
+Author URI: http://www.os-templates.com/
+Licence: Free to use under our free template licence terms
+Licence URI: http://www.os-templates.com/template-terms
+-->
+<html>
+
+<head>
+  <title>Natty Parks | Login/ Create Account | Login</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link href="https://national-parks.fcgit.net/statics/layout.css" rel="stylesheet" type="text/css" media="all">
+</head>
+
+<body id="top">
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- Top Background Image Wrapper -->
+  <div style="background-image:url('https://s3.amazonaws.com/cosc-412-s3/ParkImage_3.jpg');">
+    <!-- ################################################################################################ -->
+    <div class="wrapper row1">
+      <header id="header" class="hoc clear">
+        <!-- ################################################################################################ -->
+        <div id="logo" class="fl_left">
+          <h1>
+            <a href="https://national-parks.fcgit.net/home/index">Geodarn</a>
+          </h1>
+        </div>
+        <nav id="mainav" class="fl_right">
+          <ul class="clear">
+            <li>
+              <a href="https://national-parks.fcgit.net/home/index">Home</a>
+            </li>
+            <li class="active">
+              <a class="drop" href="#">Pages</a>
+              <ul>
+                <li>
+                  <a href="https://national-parks.fcgit.net/home/gallery">Gallery</a>
+                </li>
+                <li class="active">
+                  <a href="#">Full Width</a>
+                </li>
+                <li>
+                  <a href="#">Sidebar Left</a>
+                </li>
+                <li>
+                  <a href="#">Sidebar Right</a>
+                </li>
+                <li>
+                  <a href="#">Basic Grid</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a class="drop" href="#">Dropdown</a>
+              <ul>
+                <li>
+                  <a href="#">Level 2</a>
+                </li>
+                <li>
+                  <a class="drop" href="#">Level 2 + Drop</a>
+                  <ul>
+                    <li>
+                      <a href="#">Level 3</a>
+                    </li>
+                    <li>
+                      <a href="#">Level 3</a>
+                    </li>
+                    <li>
+                      <a href="#">Level 3</a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#">Level 2</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">Link Text</a>
+            </li>
+            <li>
+              <a href="#">Link Text</a>
+            </li>
+          </ul>
+        </nav>
+        <!-- ################################################################################################ -->
+      </header>
+    </div>
+    <!-- ################################################################################################ -->
+    <!-- ################################################################################################ -->
+    <!-- ################################################################################################ -->
+    <div class="wrapper row2">
+      <div id="breadcrumb" class="hoc clear">
+        <!-- ################################################################################################ -->
+        <ul>
+          <li>
+            <a href="https://national-parks.fcgit.net/home/index">Home</a>
+          </li>
+          <li>
+            <a href="https://national-parks.fcgit.net/home/login">Login/ Create Account</a>
+          </li>
+        </ul>
+        <!-- ################################################################################################ -->
+      </div>
+    </div>
+    <!-- ################################################################################################ -->
+  </div>
+  <!-- End Top Background Image Wrapper -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <style>
+          
+      form {
+          box-sizing: border-box;
+          border: 1px solid black;
+          padding: 5% 10%;
+      }
+      
+      /* Full-width inputs */
+      input[type=text], input[type=password] {
+      
+          padding: 10px 15px;
+          margin: 8px 0;
+          display: inline-block;
+          border: 1px solid rgb(20, 0, 94);
+          box-sizing: border-box;
+      }
+      
+      /* Set a style for all buttons */
+      button {
+          background-color: black;
+          color: white;
+          padding: 10px 15px;
+          margin: 8px 0;
+          border: none;
+          cursor: pointer;
+      
+      }
+      
+      
+      /* Add a hover effect for buttons */
+      button:hover {
+          opacity: 0.8;
+          background-color: rgb(3, 189, 34);
+          
+      }
+      
+      /* Extra style for the cancel button (red) */
+      .cancelbtn {
+          width: auto;
+          padding: 10px 18px;
+          background-color: #f44336;
+      }
+      
+      /* Center the avatar image inside this container */
+      .imgcontainer {
+          text-align: center;
+          margin: 24px 0 12px 0;
+      }
+      
+      /* Avatar image */
+      img.avatar {
+          width: 40%;
+          border-radius: 50%;
+      }
+      
+      /* Add padding to containers */
+      .container {
+          padding: 16px;
+      }
+      
+      /* The "Forgot password" text */
+      span.psw {
+          float: right;
+          padding-top: 16px;
+      }
+      
+      /* Change styles for span and cancel button on extra small screens */
+      @media screen and (max-width: 300px) {
+          span.psw {
+              display: block;
+              float: none;
+          }
+          .cancelbtn {
+              width: auto;
+          }
+      }
+  </style>
+  <!-- ################################################################################################ -->
+
+  <div class="wrapper row3">
+    <main class="hoc container clear">
+      <!-- main body -->
+      <!-- ################################################################################################ -->
+      <div class="content">
+        <!-- ################################################################################################ -->
+        <form action="action_page.php">
+          <h1>Sign In/Create Account</h1>
+          <h2>Sign-in</h2>
+          <hr>
+        
+          <div class="Login">
+            <label for="uname">
+              <b>Username</b>
+            </label>
+            <input type="text" placeholder="Enter Username" name="uname" required>
+        
+            <label for="psw">
+              <b>Password</b>
+            </label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+        
+            <button type="submit">Login</button>
+            <label>
+              <input type="checkbox" checked="checked" name="remember"> Remember me
+            </label>
+          </div>
+          <span class="psw">Forgot
+            <a href="#">password?</a>
+          </span>
+        
+          </div>
+        </form>
+        <!-- ##############################################################################################-->
+       
+
+       
+        <form>
+          <div class="container">
+            <h1>Joining Our Journey?</h1>
+            <p>Create an account below!</p>
+            <hr>
+
+            <label for="first">
+              <b>First Name</b>
+            </label>
+            <input type="text" placeholder="Enter First Name" name="first" required>
+
+            <label for="last">
+              <b>Last Name</b>
+            </label>
+            <input type="text" placeholder="Enter Last Name" name="last" required>
+
+            <label for="email">
+              <b>Email</b>
+            </label>
+            <input type="text" placeholder="Enter Email" name="email" required>
+
+            <label for="Phone">
+              <b>Phone Number</b>
+            </label>
+            <input type="text" placeholder="Enter Phone Number" name="Phone" required>
+
+            <label for="psw">
+              <b>Password</b>
+            </label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+
+            <label for="psw-repeat">
+              <b>Repeat Password</b>
+            </label>
+            <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+
+            <label>
+              <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+            </label>
+
+            <p>By creating an account you agree to give group two
+              <a href="#" style="color:dodgerblue">a 100% on the project</a>.</p>
+
+            <div class="clearfix">
+              <button type="button" class="cancelbtn">Cancel</button>
+              <button type="submit" class="signupbtn">Sign-Up</button>
+            </div>
+          </div>
+        </form>
+        <!-- / main body -->
+        <div class="clear"></div>
+    </main>
+    </div>
+    <!-- ################################################################################################ -->
+    <!-- ################################################################################################ -->
+    <!-- ################################################################################################ -->
+    <div class="wrapper row4 bgded overlay" style="background-color:rgb(63, 60, 60);">
+        <footer id="footer" class="hoc clear"> 
+          <!-- ################################################################################################ -->
+          <div class="one_third first">
+            <h3 class="heading">Natty Parks</h3>
+            <ul class="faico clear">
+              <li><a class="faicon-facebook" href="facebook.com"><i class="fa fa-facebook"></i></a></li>
+              <li><a class="faicon-twitter" href="twitter.com"><i class="fa fa-twitter"></i></a></li>
+              <li><a class="faicon-instagram" href="twitter.com"><i class="fa fa-instagram"></i></a></li>
+            </ul>
+          </div>
+          <div class="one_third">
+            <ul class="nospace meta">
+              <li class="btmspace-15"><i class="fa fa-phone"></i> +00 (123) 456 7890</li>
+              <li><i class="fa fa-envelope-o"></i> nattyparks@gmail.com</li>
+            </ul>
+          </div>
+          <div class="one_third">
+              <form method="post" action="#">
+                <fieldset>
+                  <legend>Newsletter:</legend>
+                  <div class="clear">
+                    <input type="text" value="" placeholder="Type Email Here&hellip;">
+                    <button class="fa fa-share" type="submit" title="Submit"><em>Submit</em></button>
+                  </div>
+                </fieldset>
+              </form>
+            </div>
+        
+          <!-- ################################################################################################ -->
+        </footer>
+      </div>
+    <!-- ################################################################################################ -->
+    <!-- ################################################################################################ -->
+    <!-- ################################################################################################ -->
+    <div class="wrapper row5">
+      <div id="copyright" class="hoc clear">
+        <!-- ################################################################################################ -->
+        <p class="fl_left">Copyright &copy; 2016 - All Rights Reserved -
+          <a href="#">Domain Name</a>
+        </p>
+        <p class="fl_right">Template by
+          <a target="_blank" href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a>
+        </p>
+        <!-- ################################################################################################ -->
+      </div>
+    </div>
+    <!-- ################################################################################################ -->
+    <!-- ################################################################################################ -->
+    <!-- ################################################################################################ -->
+    <a id="backtotop" href="#top">
+      <i class="fa fa-chevron-up"></i>
+    </a>
+    <!-- JAVASCRIPTS -->
+    <script src="https://national-parks.fcgit.net/statics/jquery.min.js"></script>
+    <script src="https://national-parks.fcgit.net/statics/jquery.backtotop.js"></script>
+    <script src="https://national-parks.fcgit.net/statics/jquery.mobilemenu.js"></script>
+</body>
+
+</html>
