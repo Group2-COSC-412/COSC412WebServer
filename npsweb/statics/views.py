@@ -6,7 +6,7 @@ import os
 WK_DIR = os.path.dirname(os.path.abspath(__file__))
 
 
-def css(request):
+def css(request, file):
     pathlist = request.path.split('/')
     file = pathlist[len(pathlist) - 1]
     return HttpResponse(open(WK_DIR+'/css/'+file))
