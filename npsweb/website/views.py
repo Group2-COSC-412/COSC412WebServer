@@ -8,10 +8,6 @@ import os
 WK_DIR = os.path.dirname(os.path.abspath(__file__))
 
 
-def empty(request):
-    return redirect('https://national-parks.fcgit.net/home/index')
-
-
 def index(request, file: str):
     if not file.endswith(".html"):
         file += ".html"
