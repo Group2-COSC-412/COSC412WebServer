@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.shortcuts import redirect
 
 urlpatterns = [
     path('statics/', include('statics.urls')),
@@ -22,5 +23,5 @@ urlpatterns = [
     path('home/', include('website.urls')),
     path('auth/', include('auth.urls')),
     path('admin/', admin.site.urls),
-    path('', include('website.urls'))
+    path('', redirect('https://national-parks.fcgit.net/home/index'))
 ]
