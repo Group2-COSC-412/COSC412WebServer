@@ -6,18 +6,6 @@ import os
 WK_DIR = os.path.dirname(os.path.abspath(__file__))
 
 
-def css(request, file):
+def statics(request, file):
     pathlist = request.path.split('/')
-    return HttpResponse(open(WK_DIR+'/css/'+file))
-
-
-def fonts(request: HttpRequest):
-    pathlist = request.path.split('/')
-    file = pathlist[len(pathlist) - 1]
-    return HttpResponse(open(WK_DIR+'/css/fonts/'+file))
-
-
-def js(request: HttpRequest):
-    pathlist = request.path.split('/')
-    file = pathlist[len(pathlist) - 1]
-    return HttpResponse(open(WK_DIR+'/js/'+file))
+    return HttpResponse(open(WK_DIR+'/statics/'+file))
