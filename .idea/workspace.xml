@@ -2,23 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="03e4180d-bb76-43c7-b79c-5172c71fd2d8" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/npsweb/statics/css/custom.flexslider.css" afterPath="$PROJECT_DIR$/npsweb/statics/static_files/custom.flexslider.css" />
-      <change beforePath="$PROJECT_DIR$/npsweb/statics/css/fontawesome-4.6.3.min.css" afterPath="$PROJECT_DIR$/npsweb/statics/static_files/fontawesome-4.6.3.min.css" />
-      <change beforePath="$PROJECT_DIR$/npsweb/statics/css/fonts/FontAwesome.otf" afterPath="$PROJECT_DIR$/npsweb/statics/static_files/FontAwesome.otf" />
-      <change beforePath="$PROJECT_DIR$/npsweb/statics/css/fonts/fontawesome-webfont.eot" afterPath="$PROJECT_DIR$/npsweb/statics/static_files/fontawesome-webfont.eot" />
-      <change beforePath="$PROJECT_DIR$/npsweb/statics/css/fonts/fontawesome-webfont.svg" afterPath="$PROJECT_DIR$/npsweb/statics/static_files/fontawesome-webfont.svg" />
-      <change beforePath="$PROJECT_DIR$/npsweb/statics/css/fonts/fontawesome-webfont.ttf" afterPath="$PROJECT_DIR$/npsweb/statics/static_files/fontawesome-webfont.ttf" />
-      <change beforePath="$PROJECT_DIR$/npsweb/statics/css/fonts/fontawesome-webfont.woff" afterPath="$PROJECT_DIR$/npsweb/statics/static_files/fontawesome-webfont.woff" />
-      <change beforePath="$PROJECT_DIR$/npsweb/statics/css/fonts/fontawesome-webfont.woff2" afterPath="$PROJECT_DIR$/npsweb/statics/static_files/fontawesome-webfont.woff2" />
-      <change beforePath="$PROJECT_DIR$/npsweb/statics/css/framework.css" afterPath="$PROJECT_DIR$/npsweb/statics/static_files/framework.css" />
-      <change beforePath="$PROJECT_DIR$/npsweb/statics/css/layout.css" afterPath="$PROJECT_DIR$/npsweb/statics/static_files/layout.css" />
-      <change beforePath="$PROJECT_DIR$/npsweb/statics/js/jquery.backtotop.js" afterPath="$PROJECT_DIR$/npsweb/statics/static_files/jquery.backtotop.js" />
-      <change beforePath="$PROJECT_DIR$/npsweb/statics/js/jquery.flexslider-min.js" afterPath="$PROJECT_DIR$/npsweb/statics/static_files/jquery.flexslider-min.js" />
-      <change beforePath="$PROJECT_DIR$/npsweb/statics/js/jquery.min.js" afterPath="$PROJECT_DIR$/npsweb/statics/static_files/jquery.min.js" />
-      <change beforePath="$PROJECT_DIR$/npsweb/statics/js/jquery.mobilemenu.js" afterPath="$PROJECT_DIR$/npsweb/statics/static_files/jquery.mobilemenu.js" />
-      <change beforePath="$PROJECT_DIR$/npsweb/statics/migrations/__init__.py" afterPath="" />
       <change beforePath="$PROJECT_DIR$/npsweb/statics/urls.py" afterPath="$PROJECT_DIR$/npsweb/statics/urls.py" />
-      <change beforePath="$PROJECT_DIR$/npsweb/statics/views.py" afterPath="$PROJECT_DIR$/npsweb/statics/views.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,17 +13,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/npsweb/statics/urls.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="54">
-              <caret line="5" column="45" lean-forward="false" selection-start-line="5" selection-start-column="45" selection-end-line="5" selection-end-column="45" />
+              <caret line="5" column="39" lean-forward="true" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/npsweb/statics/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="198">
@@ -91,8 +75,8 @@
         <option value="$PROJECT_DIR$/Tests_COSC412/npsweb_tests/npsweb_website.py" />
         <option value="$PROJECT_DIR$/npsweb_tests/npsweb_website.py" />
         <option value="$PROJECT_DIR$/npsweb_tests.py" />
-        <option value="$PROJECT_DIR$/npsweb/statics/urls.py" />
         <option value="$PROJECT_DIR$/npsweb/statics/views.py" />
+        <option value="$PROJECT_DIR$/npsweb/statics/urls.py" />
       </list>
     </option>
   </component>
@@ -139,13 +123,6 @@
               <item name="cosc412webserver.git" type="462c0819:PsiDirectoryNode" />
               <item name="npsweb" type="462c0819:PsiDirectoryNode" />
               <item name="statics" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cosc412webserver.git" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cosc412webserver.git" type="462c0819:PsiDirectoryNode" />
-              <item name="npsweb" type="462c0819:PsiDirectoryNode" />
-              <item name="statics" type="462c0819:PsiDirectoryNode" />
-              <item name="static_files" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -655,14 +632,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/npsweb/statics/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="5" column="45" lean-forward="false" selection-start-line="5" selection-start-column="45" selection-end-line="5" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/npsweb/statics/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -670,6 +639,14 @@
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/npsweb/statics/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="5" column="39" lean-forward="true" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
+          <folding />
         </state>
       </provider>
     </entry>

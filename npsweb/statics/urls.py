@@ -3,5 +3,5 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('statics/<path:file>', views.statics),
+    path('<path:file>', views.statics),
 ]
