@@ -7,6 +7,7 @@ import os
 # Create your views here.
 WK_DIR = os.path.dirname(os.path.abspath(__file__))
 
+
 def empty(request):
     return redirect('https://national-parks.fcgit.net/home/index')
 
