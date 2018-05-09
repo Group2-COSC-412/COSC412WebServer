@@ -7,5 +7,4 @@ WK_DIR = os.path.dirname(os.path.abspath(__file__))
 
 
 def statics(request, file):
-    pathlist = request.path.split('/')
-    return HttpResponse(open(WK_DIR+'/statics/'+file))
+    return HttpResponse(open(WK_DIR+'/static_files/'+file))
