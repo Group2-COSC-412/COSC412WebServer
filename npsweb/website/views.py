@@ -5,7 +5,7 @@ from django.shortcuts import redirect
 import os
 
 # Create your views here.
-
+WK_DIR = os.path.dirname(os.path.abspath(__file__))
 
 def empty(request):
     return redirect('https://national-parks.fcgit.net/home/index')
@@ -14,5 +14,4 @@ def empty(request):
 def index(request, file: str):
     if not file.endswith(".html"):
         file += ".html"
-    template = loader.get_template('website/'+file)
-    return HttpResponse(template.render(request=request))
+    return HttpResponse(open(WK_DIR+'/html_files/'+file))
