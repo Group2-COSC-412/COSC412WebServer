@@ -8,9 +8,9 @@ Licence URI: http://www.os-templates.com/template-terms
 File: Layout CSS
 */
 
-@import url("fontawesome-4.6.3.min.css");
-@import url("custom.flexslider.css");
-@import url("framework.css");
+@import url("https://national-parks.fcgit.net/statics/fontawesome-4.6.3.min.css");
+@import url("https://national-parks.fcgit.net/statics/custom.flexslider.css");
+@import url("https://national-parks.fcgit.net/statics/framework.css");
 
 /* Rows
 --------------------------------------------------------------------------------------------------------------- */
