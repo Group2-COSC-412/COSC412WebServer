@@ -55,7 +55,7 @@ ROOT_URLCONF = 'npsweb.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR+'/website/templates'],
+        'DIRS': [BASE_DIR+'/website/html_files'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

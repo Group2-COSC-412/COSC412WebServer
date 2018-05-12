@@ -1,8 +1,7 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 from elasticsearch import Elasticsearch, RequestsHttpConnection
 from requests_aws4auth import AWS4Auth
-from django.http import HttpRequest, HttpResponseForbidden
+from django.http import HttpRequest, HttpResponseForbidden, HttpResponse, JsonResponse
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
@@ -33,7 +32,7 @@ def es(request: HttpRequest):
         query = {}
         esresponse = esnode.search(index=request.GET.get("index"), body=str(query).replace('\'', '\"'))
 
-        return HttpResponse('{"comment": "example comment on a park that we pulled from the database"}')
+        return JsonResponse(esresponse)
 
     elif request.method == "POST":
         keys = open("/home/ubuntu/keys/Django-User-AWS.key", 'r')
