@@ -3,14 +3,16 @@ from django.http import HttpResponse, HttpRequest
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.shortcuts import redirect
+from django.views.decorators.csrf import csrf_protect
+
 
 # Create your views here.
-
 def usrLogout(request: HttpRequest):
     logout(request)
     return redirect('https://national-parks.fcgit.net/')
 
 
+@csrf_protect
 def createUser(request: HttpRequest):
     """
     username: 150 chars or fewer

@@ -1,7 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import FileResponse
 from django.template import loader
-from django.shortcuts import redirect
+from django.views.decorators.csrf import csrf_protect
 import os
 
 # Create your views here.
