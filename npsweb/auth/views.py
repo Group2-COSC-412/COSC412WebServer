@@ -25,7 +25,7 @@ def createUser(request: HttpRequest):
         redirect to user creation page
     """
     if request.method == "POST" and\
-            "username" in request.POST and\
+            "email" in request.POST and\
             "psw-repeat" in request.POST and \
             "psw" in request.POST and\
             "first" in request.POST and\
