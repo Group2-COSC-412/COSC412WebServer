@@ -37,7 +37,7 @@ def createUser(request: HttpRequest):
         user.last_name = request.POST.get("last")
 
         user.save()
-
+        return redirect('https://national-parks.fcgit.net/home/login')
     elif request.method == "GET":
         return redirect('https://national-parks.fcgit.net/home/login')
     pass
