@@ -209,8 +209,7 @@ Licence URI: http://www.os-templates.com/template-terms
       <!-- ################################################################################################ -->
       <div class="content">
         <!-- ################################################################################################ -->
-        <form action="/auth/login" method="POST"> 
-          {% csrf_token %}
+        <form action="/auth/login" method="POST">{% csrf_token %}
           <h1>Sign In/Create Account</h1>
           <h2>Sign-in</h2>
           <hr>
@@ -242,7 +241,7 @@ Licence URI: http://www.os-templates.com/template-terms
 
 
 
-      <form action="/auth/create" method="POST">
+      <form action="/auth/create" method="POST">{% csrf_token %}
         <div class="container">
           <h1>Joining Our Journey?</h1>
           <p>Create an account below!</p>
@@ -331,7 +330,7 @@ Licence URI: http://www.os-templates.com/template-terms
         </ul>
       </div>
       <div class="one_third">
-        <form method="post" action="#">
+        <form method="post" action="#">{% csrf_token %}
           <fieldset>
             <legend>Newsletter:</legend>
             <div class="clear">
