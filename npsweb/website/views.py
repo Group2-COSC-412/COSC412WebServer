@@ -8,7 +8,9 @@ import os
 WK_DIR = os.path.dirname(os.path.abspath(__file__))
 
 
+# open(WK_DIR+'/html_files/'+file)
 def index(request, file: str):
     if not file.endswith(".html"):
         file += ".html"
-    return FileResponse(open(WK_DIR+'/html_files/'+file))
+    template = loader.get_template(file)
+    return FileResponse(template.render())
