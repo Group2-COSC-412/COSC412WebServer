@@ -14,5 +14,5 @@ def index(request, file: str):
     if not file.endswith(".html"):
         file += ".html"
     if file == 'login.html':
-        return auth_views.LoginView.as_view(template_name='login.html')
+        return auth_views.LoginView.as_view(template_name='login.html')(request)
     return FileResponse(render(request, file))
