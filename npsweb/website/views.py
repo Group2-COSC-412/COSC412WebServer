@@ -12,5 +12,4 @@ WK_DIR = os.path.dirname(os.path.abspath(__file__))
 def index(request, file: str):
     if not file.endswith(".html"):
         file += ".html"
-    template = loader.get_template(file)
-    return FileResponse(template.render())
+    return FileResponse(render(request, file))
