@@ -1,20 +1,11 @@
-from django.shortcuts import render
-from django.http import HttpResponse, HttpRequest
-from django.contrib.auth import authenticate, login, logout
+from django.http import HttpRequest
+from django.contrib.auth import logout
 from django.contrib.auth.models import User
 from django.shortcuts import redirect
 from django.views.decorators.csrf import csrf_protect
 
 
-def logins(request):
-    return redirect('https://national-parks.fcgit.net/home/login')
-
 # Create your views here.
-def usrLogout(request: HttpRequest):
-    logout(request)
-    return redirect('https://national-parks.fcgit.net/')
-
-
 @csrf_protect
 def createUser(request: HttpRequest):
     """
