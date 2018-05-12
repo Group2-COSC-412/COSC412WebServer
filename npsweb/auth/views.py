@@ -6,26 +6,9 @@ from django.shortcuts import redirect
 
 # Create your views here.
 
-
-def usrLogin(request: HttpRequest):
-    if request.method == 'GET':
-        return redirect('https://national-parks.fcgit.net/home/login')
-    else:
-        # if username and password in db, login, otherwise return error
-        username = request.POST["username"]
-        password = request.POST["password"]
-        user = authenticate(request, username=username, password=password)
-        if user:
-            login(request, user)
-            return redirect('https://national-parks.fcgit.net/')
-        else:
-            # TODO Return error message
-            pass
-
-
 def usrLogout(request: HttpRequest):
     logout(request)
-    redirect('https://national-parks.fcgit.net/')
+    return redirect('https://national-parks.fcgit.net/')
 
 
 def createUser(request: HttpRequest):
@@ -41,19 +24,18 @@ def createUser(request: HttpRequest):
     """
     if request.method == "POST" and\
             "username" in request.POST and\
-            "email" in request.POST and \
-            "password" in request.POST and\
-            "fname" in request.POST and\
-            "lname" in request.POST:
-        user = User.objects.create_user(request.POST.get("username"),
+            "psw-repeat" in request.POST and \
+            "psw" in request.POST and\
+            "first" in request.POST and\
+            "last" in request.POST:
+        user = User.objects.create_user(request.POST.get("email"),
                                         request.POST.get("email"),
                                         request.POST.get("password"))
-        user.first_name = request.POST.get("fname")
-        user.last_name = request.POST.get("lname")
+        user.first_name = request.POST.get("first")
+        user.last_name = request.POST.get("last")
 
         user.save()
 
     elif request.method == "GET":
-        # TODO
         return redirect('https://national-parks.fcgit.net/home/login')
     pass
