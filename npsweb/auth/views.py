@@ -6,6 +6,9 @@ from django.shortcuts import redirect
 from django.views.decorators.csrf import csrf_protect
 
 
+def logins(request):
+    return redirect('https://national-parks.fcgit.net/home/login')
+
 # Create your views here.
 def usrLogout(request: HttpRequest):
     logout(request)
