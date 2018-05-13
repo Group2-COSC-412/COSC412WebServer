@@ -12,7 +12,7 @@ import time
 def es(request: HttpRequest):
     """
     GET params:
-        index: "comment", "reviews", "park", or "picture"
+        index: "comment", "review", "park", or "picture"
         parkid: currently only the numbers 1-10, maps to a specific park
         tmin: minimum unix epoch time to search by, default is 0
         tmax: maximum unix epoch time to search by, default is current time
@@ -26,7 +26,7 @@ def es(request: HttpRequest):
             pictureid: numeric id of the picture the comment is mapped to
             comment: full comment as a string
 
-        else if parkid is "reviews":
+        else if parkid is "review":
             parkid: id of park the review is for
             review: full review as a string
             rating: 1-5 integer
@@ -98,5 +98,57 @@ def es(request: HttpRequest):
             connection_class=RequestsHttpConnection
         )
 
-        esnode.index()
+        allowed_indeces = ['review', 'comment', 'picture']
+        index = request.POST.get("index")
+        if index in allowed_indeces:
+            body = {}
+            if index == 'review' and\
+                    request.POST.get("parkid") and\
+                    request.POST.get("rating") and\
+                    request.POST.get("review"):
+                body = {
+                    'parkid': request.POST.get("parkid"),
+                    'rating': request.POST.get("rating"),
+                    'review': request.POST.get("review"),
+                    'time': time.time(),
+                    'user': request.user.get_username()
+                }
+            elif index == 'comment' and\
+                    request.POST.get("pictureid") and\
+                    request.POST.get("comment"):
+                body = {
+                    'picture_id': request.POST.get("pictureid"),
+                    'comment': request.POST.get("comment"),
+                    'time': time.time(),
+                    'user': request.user.get_username()
+                }
+            elif index == 'picture' and\
+                    request.POST.get("parkid") and\
+                    request.POST.get("pictureurl"):
+                pictureid = geterateid(esnode)
+                body = {
+                    'parkid': request.POST.get("parkid"),
+                    'picture_url': request.POST.get("pictureurl"),
+                    'picture_id': pictureid,
+                    'time': time.time(),
+                    'user': request.user.get_username()
+                }
+
+            esnode.index(index=request.POST.get("index"),
+                         doc_type=request.POST.get("index"),
+                         body=str(body).replace('\'', '\"'))
         return HttpResponse('')
+
+
+def generateid(esnode: Elasticsearch):
+    esid = 0
+    while esnode.search(index='picture', doc_type='picture', body={
+        'query': {
+            "term": {
+                "picture_id": esid
+            }
+        }
+    })['hits']['']:
+        esid += 1
+
+    return esid
