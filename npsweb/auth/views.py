@@ -5,6 +5,7 @@ from django.shortcuts import redirect
 from django.views.decorators.csrf import csrf_protect
 from django.conf import settings
 
+
 # Create your views here.
 @csrf_protect
 def createUser(request: HttpRequest):
@@ -24,10 +25,11 @@ def createUser(request: HttpRequest):
                 "psw-repeat" in request.POST and \
                 "psw" in request.POST and\
                 "first" in request.POST and\
+                request.POST['psw'] == request.POST['psw-repeat'] and\
                 "last" in request.POST:
             user = User.objects.create_user(username=request.POST.get("email"),
                                             email=request.POST.get("email"),
-                                            password=request.POST.get("password"))
+                                            password=request.POST.get("psw"))
             user.first_name = request.POST.get("first")
             user.last_name = request.POST.get("last")
 
