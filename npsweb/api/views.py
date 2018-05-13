@@ -63,17 +63,17 @@ def es(request: HttpRequest):
         )
         query = {"size": int(request.GET.get("size")),
                  "query": {"bool": {
-                            "must": {
-                                "range": {
+                            "must": [
+                                {"range": {
                                     "time": {
                                         "gte": request.GET.get("tmin", 0),
                                         "lte": request.GET.get("tmax", time.time()),
                                     }
-                                },
-                                "term": {
+                                }},
+                                {"term": {
                                     "parkid": int(request.GET.get("parkid")),
-                                }
-                            },
+                                }}
+                            ]
                         }}
                  }
         esresponse = esnode.search(index=request.GET.get("index"), body=str(query).replace('\'', '\"'))
