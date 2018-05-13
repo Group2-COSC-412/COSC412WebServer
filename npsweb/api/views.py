@@ -7,7 +7,7 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 
-@login_required(login_url="/home/login/")
+@login_required(login_url="/home/login")
 def es(request: HttpRequest):
     if request.method == "GET" and\
             "index" in request.GET and\
