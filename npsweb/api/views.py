@@ -3,6 +3,7 @@ from elasticsearch import Elasticsearch, RequestsHttpConnection
 from requests_aws4auth import AWS4Auth
 from django.http import HttpRequest, HttpResponseForbidden, HttpResponse, JsonResponse
 from django.contrib.auth.decorators import login_required
+import time
 
 # Create your views here.
 
@@ -13,8 +14,9 @@ def es(request: HttpRequest):
     GET params:
         index: "comment", "reviews", "park", or "picture"
         parkid: currently only the numbers 1-10, maps to a specific park
-        tmin: minimum unix epoch time to search by
-        tmax: maximum unix epoch time to search by
+        tmin: minimum unix epoch time to search by, default is 0
+        tmax: maximum unix epoch time to search by, default is current time
+        size: number of items to return
 
     POST params:
         index: "comment", "reviews", "park", or "picture"
@@ -59,8 +61,20 @@ def es(request: HttpRequest):
             verify_certs=True,
             connection_class=RequestsHttpConnection
         )
-
-        query = {}
+        query = {"query": {"bool": {
+                            "must": {
+                                "range": {
+                                    "time": {
+                                        "gte": request.GET.get("tmin", 0),
+                                        "lte": request.GET.get("tmax", time.time()),
+                                    }
+                                },
+                                "term": {
+                                    "parkid": request.GET.get("parkid"),
+                                }
+                            },
+                        }},
+                 "size": request.GET.get("size")}
         esresponse = esnode.search(index=request.GET.get("index"), body=str(query).replace('\'', '\"'))
 
         return JsonResponse(esresponse)
