@@ -38,12 +38,17 @@ Licence URI: http://www.os-templates.com/template-terms
               <li><a href="#">Natty ParksGO</a></li>
             </ul>
           </li>
+          {% if not user.is_anonymous %}
+          <li><a class="drop" href="https://national-parks.fcgit.net/auth/logout">Logout</a>
+          </li>
+          {% else %}
           <li><a class="drop" href="#">Login/Create Account</a>
             <ul>
               <li><a href="https://national-parks.fcgit.net/home/login">Login/Create Account</a></li>
               <li><a href="https://national-parks.fcgit.net/home/full-width">Forgot Password</a></li>
             </ul>
           </li>
+          {% endif %}
           <li><a href="#">Contact Us</a></li>
         </ul>
       </nav>
