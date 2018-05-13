@@ -42,7 +42,7 @@ if __name__ == "__main__":
                 "parkid": i,
                 "location": "123 Fake RD, Not a Town, State 12345",
                 "Name": "National Park " + str(i + 1)}
-        esnode.index(index="reviews", doc_type="review", body=str(review).replace('\'', '\"'))
+        esnode.index(index="review", doc_type="review", body=str(review).replace('\'', '\"'))
         esnode.index(index="comment", doc_type="comment", body=str(comment).replace('\'', '\"'))
         esnode.index(index="picture", doc_type="picture", body=str(picture).replace('\'', '\"'))
         esnode.index(index="park", doc_type="park", body=str(park).replace('\'', '\"'))

@@ -97,4 +97,6 @@ def es(request: HttpRequest):
             verify_certs=True,
             connection_class=RequestsHttpConnection
         )
+
+        esnode.index()
         return HttpResponse('')
