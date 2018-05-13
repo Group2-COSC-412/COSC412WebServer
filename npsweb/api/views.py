@@ -61,7 +61,8 @@ def es(request: HttpRequest):
             verify_certs=True,
             connection_class=RequestsHttpConnection
         )
-        query = {"query": {"bool": {
+        query = {"size": int(request.GET.get("size")),
+                 "query": {"bool": {
                             "must": {
                                 "range": {
                                     "time": {
@@ -70,11 +71,11 @@ def es(request: HttpRequest):
                                     }
                                 },
                                 "term": {
-                                    "parkid": request.GET.get("parkid"),
+                                    "parkid": int(request.GET.get("parkid")),
                                 }
                             },
-                        }},
-                 "size": request.GET.get("size")}
+                        }}
+                 }
         esresponse = esnode.search(index=request.GET.get("index"), body=str(query).replace('\'', '\"'))
 
         return JsonResponse(esresponse)
