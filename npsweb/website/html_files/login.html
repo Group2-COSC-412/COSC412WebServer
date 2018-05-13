@@ -31,63 +31,31 @@ Licence URI: http://www.os-templates.com/template-terms
           </h1>
         </div>
         <nav id="mainav" class="fl_right">
-          <ul class="clear">
-            <li>
-              <a href="https://national-parks.fcgit.net/home/index">Home</a>
-            </li>
-            <li class="active">
-              <a class="drop" href="#">Pages</a>
-              <ul>
-                <li>
-                  <a href="https://national-parks.fcgit.net/home/gallery">Gallery</a>
-                </li>
-                <li class="active">
-                  <a href="#">Full Width</a>
-                </li>
-                <li>
-                  <a href="#">Sidebar Left</a>
-                </li>
-                <li>
-                  <a href="#">Sidebar Right</a>
-                </li>
-                <li>
-                  <a href="#">Basic Grid</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a class="drop" href="#">Dropdown</a>
-              <ul>
-                <li>
-                  <a href="#">Level 2</a>
-                </li>
-                <li>
-                  <a class="drop" href="#">Level 2 + Drop</a>
-                  <ul>
-                    <li>
-                      <a href="#">Level 3</a>
-                    </li>
-                    <li>
-                      <a href="#">Level 3</a>
-                    </li>
-                    <li>
-                      <a href="#">Level 3</a>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <a href="#">Level 2</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a href="#">Link Text</a>
-            </li>
-            <li>
-              <a href="#">Link Text</a>
-            </li>
-          </ul>
-        </nav>
+            <ul class="clear">
+              <li class="active"><a href="https://national-parks.fcgit.net/home/index">Home</a></li>
+              <li><a href="https://national-parks.fcgit.net/home/states">Find a Park</a></li>
+              <li><a class="drop" href="#">Get Involved</a>
+                <ul>
+                  <li><a href="https://national-parks.fcgit.net/home/payment">Donate</a></li>
+                  <li><a href="https://national-parks.fcgit.net/home/volunteer">Volunteer</a></li>
+                  <li><a href="#">Events</a></li>
+                  <li><a href="#">Natty ParksGO</a></li>
+                </ul>
+              </li>
+              {% if not user.is_anonymous %}
+              <li><a class="active" href="https://national-parks.fcgit.net/auth/logout">Logout</a>
+              </li>
+              {% else %}
+              <li><a class="drop" href="#">Login/Create Account</a>
+                <ul>
+                  <li><a href="https://national-parks.fcgit.net/home/login">Login/Create Account</a></li>
+                  <li><a href="https://national-parks.fcgit.net/home/full-width">Forgot Password</a></li>
+                </ul>
+              </li>
+              {% endif %}
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </nav>
         <!-- ################################################################################################ -->
       </header>
     </div>

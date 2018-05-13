@@ -11,11 +11,10 @@ from django.conf import settings
 def createUser(request: HttpRequest):
     try:
         """
-        username: 150 chars or fewer
-        email: valid email address
+        email: valid email address, 150 chars max
         password: arbitrary length, any character
-        fname: 30 chars or fewer
-        lname: 150 chars of fewer
+        first: 30 chars or fewer
+        last: 150 chars of fewer
         
         :return: either success message or failure message (with reason) if POST, otherwise
             redirect to user creation page
