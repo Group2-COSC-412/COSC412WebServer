@@ -4,6 +4,7 @@ from requests_aws4auth import AWS4Auth
 from django.http import HttpRequest, HttpResponseForbidden, HttpResponse, JsonResponse
 from django.contrib.auth.decorators import login_required
 import time
+import random
 
 # Create your views here.
 
@@ -125,7 +126,7 @@ def es(request: HttpRequest):
             elif index == 'picture' and\
                     request.POST.get("parkid") and\
                     request.POST.get("pictureurl"):
-                pictureid = geterateid(esnode)
+                pictureid = generatepicid(esnode)
                 body = {
                     'parkid': request.POST.get("parkid"),
                     'picture_url': request.POST.get("pictureurl"),
@@ -137,18 +138,20 @@ def es(request: HttpRequest):
             esnode.index(index=request.POST.get("index"),
                          doc_type=request.POST.get("index"),
                          body=str(body).replace('\'', '\"'))
-        return HttpResponse('')
+            return JsonResponse(body)
 
 
-def generateid(esnode: Elasticsearch):
-    esid = 0
+def generatepicid(esnode: Elasticsearch):
+    rand = random.Random()
+
+    esid = rand.random()
     while esnode.search(index='picture', doc_type='picture', body={
         'query': {
             "term": {
                 "picture_id": esid
             }
         }
-    })['hits']['']:
-        esid += 1
+    })['hits']['total'] > 0:
+        esid = rand.random()
 
     return esid
