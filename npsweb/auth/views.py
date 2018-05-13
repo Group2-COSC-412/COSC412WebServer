@@ -3,7 +3,7 @@ from django.contrib.auth import logout
 from django.contrib.auth.models import User
 from django.shortcuts import redirect
 from django.views.decorators.csrf import csrf_protect
-from ..npsweb import settings
+from django.conf import settings
 
 # Create your views here.
 @csrf_protect
