@@ -43,6 +43,7 @@ def es_get_test(esnode: Elasticsearch):
              }
     esresponse = esnode.search(index="comment", body=str(query).replace('\'', '\"'))
     print(esresponse)
+    print('\n\n')
 
 
 # this is the same query that the POST requests form in api/views.py
@@ -86,7 +87,7 @@ def es_post_test(esnode: Elasticsearch):
                      doc_type=index,
                      body=str(body).replace('\'', '\"'))
         print(esnode.search(index=index, body=str(searchbody).replace('\'', '\"')))
-
+        time.sleep(2)
         esnode.delete_by_query(index=index, body=str(searchbody).replace('\'', '\"'))
 
 
