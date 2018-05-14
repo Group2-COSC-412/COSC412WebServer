@@ -48,8 +48,8 @@ def es_get_test(esnode: Elasticsearch):
 # this is the same query that the POST requests form in api/views.py
 def es_post_test(esnode: Elasticsearch):
     allowed_indeces = ['review', 'comment', 'picture']
-    parkid = 22222222222222222222222222222222222222
-    pictureid = 11111111111111111111111111111111111
+    parkid = 22222222222222
+    pictureid = 111111111111111
     user = 'testuser1@gmail.com'
     for index in allowed_indeces:
         body = {}
