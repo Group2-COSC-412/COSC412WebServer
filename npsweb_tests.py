@@ -4,7 +4,8 @@ import time
 import random
 
 
-def es_get_test(esnode):
+# this is the same query that the GET requests form in api/views.py
+def es_get_test(esnode: Elasticsearch):
     query = {"size": 100,
              "query": {"bool": {
                  "must": [
@@ -44,10 +45,53 @@ def es_get_test(esnode):
     print(esresponse)
 
 
-def es_post_test(esnode):
-    pass
+# this is the same query that the POST requests form in api/views.py
+def es_post_test(esnode: Elasticsearch):
+    allowed_indeces = ['review', 'comment', 'picture']
+    parkid = 22222222222222222222222222222222222222
+    pictureid = 11111111111111111111111111111111111
+    user = 'testuser1@gmail.com'
+    for index in allowed_indeces:
+        body = {}
+        searchbody = {"query": {
+                        "term": {
+                            "user": user
+                        }
+                    }}
+        if index == 'review':
+            body = {
+                'parkid': parkid,
+                'rating': 5,
+                'review': "wow great park!",
+                'time': time.time(),
+                'user': user
+            }
+        elif index == 'comment':
+            body = {
+                'picture_id': pictureid,
+                'comment': "wow great picture!",
+                'time': time.time(),
+                'user': user
+            }
+        elif index == 'picture':
+            body = {
+                'parkid': parkid,
+                'picture_url': "fake.com",
+                'picture_id': pictureid,
+                'time': time.time(),
+                'user': user
+            }
+
+        esnode.index(index=index,
+                     doc_type=index,
+                     body=str(body).replace('\'', '\"'))
+        print(esnode.search(index=index, body=str(searchbody).replace('\'', '\"')))
+
+        esnode.delete_by_query(index=index, body=str(searchbody).replace('\'', '\"'))
 
 
+# NOTE that this won't work if run locally, because you need AWS access keys
+# Please contact Chris if you need to run these yourself, he will give you a temporary key
 def main():
     keys = open("/home/ubuntu/keys/Django-User-AWS.key", 'r')
     aws_key = keys.readline().replace('\n', '')
@@ -66,8 +110,6 @@ def main():
         connection_class=RequestsHttpConnection
     )
     es_get_test(esnode)
-
-
 
 
 if __name__ == "__main__":
