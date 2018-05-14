@@ -55,7 +55,7 @@ def es_post_test(esnode: Elasticsearch):
     for index in allowed_indeces:
         body = {}
         searchbody = {"query": {
-                        "term": {
+                        "match": {
                             "user": user
                         }
                     }}
