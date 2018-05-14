@@ -110,6 +110,7 @@ def main():
         connection_class=RequestsHttpConnection
     )
     es_get_test(esnode)
+    es_post_test(esnode)
 
 
 if __name__ == "__main__":
