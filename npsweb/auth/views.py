@@ -37,6 +37,6 @@ def createUser(request: HttpRequest):
         elif request.method == "GET":
             return redirect('https://national-parks.fcgit.net/home/login')
     except Exception as e:
-        log = open(settings.BASE_DIR + 'usercreatelog.txt')
+        log = open(settings.BASE_DIR + 'usercreatelog.log')
         log.write(str(e))
-        return HttpResponse("something went wrong")
+        return HttpResponse("something went wrong, ask chris to look at the logs for createUser")

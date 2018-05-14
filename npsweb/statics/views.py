@@ -9,4 +9,6 @@ WK_DIR = os.path.dirname(os.path.abspath(__file__))
 def statics(request, file: str):
     if file.endswith('.css'):
         return HttpResponse(open(WK_DIR+'/static_files/'+file), content_type='text/css')
+    elif file.endswith('.js'):
+        return HttpResponse(open(WK_DIR+'/static_files/'+file), content_type='application/javascript')
     return FileResponse(open(WK_DIR+'/static_files/'+file, 'rb'))
