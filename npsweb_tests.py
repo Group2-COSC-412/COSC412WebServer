@@ -42,6 +42,7 @@ def es_get_test(esnode: Elasticsearch):
              }}
              }
     esresponse = esnode.search(index="comment", body=str(query).replace('\'', '\"'))
+
     print(esresponse)
     print('\n\n')
 
