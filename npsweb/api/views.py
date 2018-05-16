@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from elasticsearch import Elasticsearch, RequestsHttpConnection
 from requests_aws4auth import AWS4Auth
-from django.http import HttpRequest, HttpResponseForbidden, HttpResponse, JsonResponse
+from django.http import HttpRequest, JsonResponse, HttpResponseBadRequest
 from django.contrib.auth.decorators import login_required
 import time
 import random
@@ -43,9 +43,7 @@ def es(request: HttpRequest):
     :param request:
     :return:
     """
-    if request.method == "GET" and\
-            "index" in request.GET and\
-            "parkid" in request.GET:
+    if request.method == "GET":
         keys = open("/home/ubuntu/keys/Django-User-AWS.key", 'r')
         aws_key = keys.readline().replace('\n', '')
         aws_secret = keys.readline().replace('\n', '')
@@ -65,7 +63,7 @@ def es(request: HttpRequest):
 
         esresponse = {}
         if request.GET.get("index") != 'comment':
-            query = {"size": int(request.GET.get("size")),
+            query = {"size": int(request.GET.get("size", 10)),
                      "query": {"bool": {
                                 "must": [
                                     {"range": {
@@ -82,7 +80,7 @@ def es(request: HttpRequest):
                      }
             esresponse = esnode.search(index=request.GET.get("index"), body=str(query).replace('\'', '\"'))
         elif request.GET.get("index") == 'comment':
-            query = {"size": int(request.GET.get("size"), 10),
+            query = {"size": int(request.GET.get("size", 10)),
                      "query": {"bool": {
                                 "must": [
                                     {"range": {
@@ -98,6 +96,8 @@ def es(request: HttpRequest):
                             }}
                      }
             esresponse = esnode.search(index=request.GET.get("index"), body=str(query).replace('\'', '\"'))
+        else:
+            return HttpResponseBadRequest()
 
         responsearr = []
         i = 0
