@@ -99,13 +99,13 @@ def es(request: HttpRequest):
                      }
             esresponse = esnode.search(index=request.GET.get("index"), body=str(query).replace('\'', '\"'))
 
-        response = {"hits": []}
+        responsearr = []
         i = 0
         for hit in esresponse['hits']['hits']:
-            response['hits'][i] = hit['_source']
+            responsearr[i] = hit['_source']
             i += 1
 
-        return JsonResponse(response)
+        return JsonResponse({'hits': responsearr})
 
     elif request.method == "POST":
         keys = open("/home/ubuntu/keys/Django-User-AWS.key", 'r')
