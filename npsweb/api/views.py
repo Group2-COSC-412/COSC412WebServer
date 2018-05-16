@@ -82,7 +82,7 @@ def es(request: HttpRequest):
                      }
             esresponse = esnode.search(index=request.GET.get("index"), body=str(query).replace('\'', '\"'))
         elif request.GET.get("index") == 'comment':
-            query = {"size": int(request.GET.get("size")),
+            query = {"size": int(request.GET.get("size"), 10),
                      "query": {"bool": {
                                 "must": [
                                     {"range": {
@@ -99,7 +99,13 @@ def es(request: HttpRequest):
                      }
             esresponse = esnode.search(index=request.GET.get("index"), body=str(query).replace('\'', '\"'))
 
-        return JsonResponse(esresponse)
+        response = {"hits": []}
+        i = 0
+        for hit in esresponse['hits']['hits']:
+            response['hits'][i] = hit['_source']
+            i += 1
+
+        return JsonResponse(response)
 
     elif request.method == "POST":
         keys = open("/home/ubuntu/keys/Django-User-AWS.key", 'r')
