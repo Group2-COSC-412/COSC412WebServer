@@ -102,7 +102,7 @@ def es(request: HttpRequest):
         responsearr = []
         i = 0
         for hit in esresponse['hits']['hits']:
-            responsearr[i] = hit['_source']
+            responsearr[i].append(hit['_source'])
             i += 1
 
         return JsonResponse({'hits': responsearr})
