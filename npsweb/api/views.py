@@ -90,7 +90,7 @@ def es(request: HttpRequest):
                                         }
                                     }},
                                     {"term": {
-                                        "picture_id": int(request.GET.get("picture_id")),
+                                        "picture_id": int(request.GET.get("pictureid")),
                                     }}
                                 ]
                             }}
