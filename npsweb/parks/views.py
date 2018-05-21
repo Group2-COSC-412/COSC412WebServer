@@ -7,11 +7,11 @@ WK_DIR = os.path.dirname(os.path.abspath(__file__))
 
 
 # open(WK_DIR+'/html_files/'+file)
-def state(request, state: str, file: str):
+def state(request, _state: str, file: str):
     if not file.endswith(".html"):
         file += ".html"
-    return FileResponse(render(request, os.path.join(WK_DIR, state, file)))
+    return FileResponse(render(request, os.path.join(_state, file)))
 
 
-def stateindex(state: str):
+def stateindex(_state: str):
     pass
