@@ -9,7 +9,7 @@ Licence URI: http://www.os-templates.com/template-terms
 <html>
 
 <head>
-  <title>Login |Create Account </title>
+  <title>Login | Create Account</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <link href="https://national-parks.fcgit.net/statics/layout.css" rel="stylesheet" type="text/css" media="all">
@@ -60,7 +60,7 @@ Licence URI: http://www.os-templates.com/template-terms
                 </ul>
                 </li>
                 {% if not user.is_anonymous %}
-                  <li><a href=""></a></li>
+                  <li><a href="/auth/logout"></a></li>
                 {% else %}
                   <li><a class="drop">Login/Create Account</a>
                     <ul>
@@ -179,7 +179,7 @@ Licence URI: http://www.os-templates.com/template-terms
       <!-- ################################################################################################ -->
       <div class="content">
         <!-- ################################################################################################ -->
-        <form action="action_page.php">
+        <form action="/auth/login" method="POST"> {% csrf_token %}
           <h1>Sign In/Create Account</h1>
           <h2>Sign-in</h2>
           <hr>
@@ -188,12 +188,12 @@ Licence URI: http://www.os-templates.com/template-terms
             <label for="uname">
               <b>Username</b>
             </label>
-            <input type="text" placeholder="Enter Username" name="uname" required>
+            <input type="text" placeholder="Enter Username" name="username" required>
         
             <label for="psw">
               <b>Password</b>
             </label>
-            <input type="password" placeholder="Enter Password" name="psw" required>
+            <input type="password" placeholder="Enter Password" name="password" required>
         
             <button type="submit">Login</button>
             <label>
@@ -210,7 +210,7 @@ Licence URI: http://www.os-templates.com/template-terms
        
 
        
-        <form>
+        <form action="/auth/create" method="POST"> {% csrf_token %}
           <div class="container">
             <h1>Joining Our Journey?</h1>
             <p>Create an account below!</p>
@@ -284,7 +284,7 @@ Licence URI: http://www.os-templates.com/template-terms
             </ul>
           </div>
           <div class="one_third">
-              <form method="post" action="#">
+              <form method="post" action="#"> {% csrf_token %}
                 <fieldset>
                   <legend>Newsletter:</legend>
                   <div class="clear">
