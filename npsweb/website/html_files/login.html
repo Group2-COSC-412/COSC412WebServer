@@ -36,7 +36,7 @@ Licence URI: http://www.os-templates.com/template-terms
   
                 <a href="https://national-parks.fcgit.net/home/index">Home</a>
               </li>
-              <li class="active">
+              <li>
                 <a class="drop" href="https://national-parks.fcgit.net/home/states">Find a park</a>
               </li>
               <li><a href="https://national-parks.fcgit.net/home/gallery">Gallery</a></li>
@@ -62,7 +62,7 @@ Licence URI: http://www.os-templates.com/template-terms
                 {% if not user.is_anonymous %}
                   <li><a href="/auth/logout"></a></li>
                 {% else %}
-                  <li><a class="drop">Login/Create Account</a>
+                  <li class="active"><a class="drop">Login/Create Account</a>
                     <ul>
                       <li><a href="pages/login.html">Login/Create Account</a></li>
                       <li><a href="pages/full-width.html">Forgot Password</a></li>
