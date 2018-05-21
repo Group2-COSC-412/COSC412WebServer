@@ -31,23 +31,22 @@ Purpose: Payment process of donations using stripe.
       <nav id="mainav" class="fl_right">
           <ul class="clear">
               <li><a href="https://national-parks.fcgit.net/home/index">Home</a></li>
-              <li><a href="pages/states.html">Find a Park</a></li>
+              <li><a href="/home/states.html">Find a Park</a></li>
               <li><a href="https://national-parks.fcgit.net/home/gallery">Gallery</a></li>
               <li><a class="drop">Get Involved</a>
                 <ul>
-                  <li><a href="pages/payment.html">Donate</a></li>
-                  <li><a href="pages/volunteer.html">Volunteer</a></li>
-                  <li><a href="pages/sidebar-left.html">Events</a></li>
-                  <li><a href="pages/sidebar-right.html">Natty ParksGO</a></li>
+                  <li><a href="/home/payment.html">Donate</a></li>
+                  <li><a href="/home/volunteer.html">Volunteer</a></li>
+                  <li><a href="/home/NattyGo.html">Natty ParksGO</a></li>
                 </ul>
               </li>
               {% if not user.is_anonymous %}
-                <li><a href=""></a></li>
+                <li><a href="/auth/logout"></a></li>
               {% else %}
                 <li><a class="drop">Login/Create Account</a>
                   <ul>
-                    <li><a href="pages/login.html">Login/Create Account</a></li>
-                    <li><a href="pages/full-width.html">Forgot Password</a></li>
+                    <li><a href="/home/login.html">Login/Create Account</a></li>
+                    <li><a href="/home/full-width.html">Forgot Password</a></li>
                   </ul>
                 </li>
               {% endif %}
