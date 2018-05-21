@@ -11,3 +11,7 @@ def state(request, state: str, file: str):
     if not file.endswith(".html"):
         file += ".html"
     return FileResponse(render(request, os.path.join(WK_DIR, state, file)))
+
+
+def stateindex(state: str):
+    pass
