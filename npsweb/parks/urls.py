@@ -18,6 +18,6 @@ from django.urls import path, include
 from . import views
 
 urlpatterns = [
-    path('<str:state>/<str:file>', views.state),
-    path('<str:state>', views.stateindex)
+    path('<str:_state>/<str:file>', views.state),
+    path('<str:_state>', views.stateindex)
 ]
