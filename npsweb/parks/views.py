@@ -13,5 +13,5 @@ def state(request, _state: str, file: str):
     return FileResponse(render(request, os.path.join(_state, file)))
 
 
-def stateindex(_state: str):
-    pass
+def stateindex(request, _state: str):
+    return FileResponse(render(request, os.path.join(_state, 'index.html')))
