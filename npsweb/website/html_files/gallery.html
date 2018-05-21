@@ -8,7 +8,7 @@ Licence URI: http://www.os-templates.com/template-terms
 -->
 <html>
 <head>
-<title>Geodarn | Pages | Gallery</title>
+<title>Gallery</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link href="https://national-parks.fcgit.net/statics/layout.css" rel="stylesheet" type="text/css" media="all">
@@ -18,41 +18,40 @@ Licence URI: http://www.os-templates.com/template-terms
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- Top Background Image Wrapper -->
-<div class="bgded overlay" style="background-image:url('../images/demo/backgrounds/01.png');"> 
+<div class="bgded overlay" style="background-color:rgb(63, 60, 60);"> 
   <!-- ################################################################################################ -->
   <div class="wrapper row1">
     <header id="header" class="hoc clear"> 
       <!-- ################################################################################################ -->
       <div id="logo" class="fl_left">
-        <h1><a href="https://national-parks.fcgit.net/home/index">Geodarn</a></h1>
+        <h1><a href="https://national-parks.fcgit.net/home/index.html">Natty Parks</a></h1>
       </div>
       <nav id="mainav" class="fl_right">
-        <ul class="clear">
-          <li><a href="https://national-parks.fcgit.net/home/index">Home</a></li>
-          <li class="active"><a class="drop" href="#">Pages</a>
-            <ul>
-              <li class="active"><a href="https://national-parks.fcgit.net/home/gallery">Gallery</a></li>
-              <li><a href="#">Full Width</a></li>
-              <li><a href="#">Sidebar Left</a></li>
-              <li><a href="#">Sidebar Right</a></li>
-              <li><a href="#">Basic Grid</a></li>
-            </ul>
-          </li>
-          <li><a class="drop" href="#">Dropdown</a>
-            <ul>
-              <li><a href="#">Level 2</a></li>
-              <li><a class="drop" href="#">Level 2 + Drop</a>
+          <ul class="clear">
+              <li><a href="https://national-parks.fcgit.net/home/index">Home</a></li>
+              <li><a href="pages/states.html">Find a Park</a></li>
+              <li><a href="https://national-parks.fcgit.net/home/gallery">Gallery</a></li>
+              <li><a class="drop">Get Involved</a>
                 <ul>
-                  <li><a href="#">Level 3</a></li>
-                  <li><a href="#">Level 3</a></li>
-                  <li><a href="#">Level 3</a></li>
+                  <li><a href="/pages/payment.html">Donate</a></li>
+                  <li><a href="/pages/volunteer.html">Volunteer</a></li>
+                  <li><a href="/pages/events.html">Events</a></li>
+                  <li><a href="/pages/nattygo.html">Natty ParksGO</a></li>
                 </ul>
               </li>
-              <li><a href="#">Level 2</a></li>
+              {% if not user.is_anonymous %}
+                <li><a href=""></a></li>
+              {% else %}
+                <li><a class="drop">Login/Create Account</a>
+                  <ul>
+                    <li><a href="pages/login.html">Login/Create Account</a></li>
+                    <li><a href="pages/full-width.html">Forgot Password</a></li>
+                  </ul>
+                </li>
+              {% endif %}
+              <li><a href="pages/contact.html">Contact Us</a></li>
             </ul>
           </li>
-          <li><a href="#">Link Text</a></li>
-          <li><a href="#">Link Text</a></li>
         </ul>
       </nav>
       <!-- ################################################################################################ -->
@@ -64,12 +63,7 @@ Licence URI: http://www.os-templates.com/template-terms
   <div class="wrapper row2">
     <div id="breadcrumb" class="hoc clear"> 
       <!-- ################################################################################################ -->
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Lorem</a></li>
-        <li><a href="#">Ipsum</a></li>
-        <li><a href="#">Dolor</a></li>
-      </ul>
+    <h2>Gallery</h2>
       <!-- ################################################################################################ -->
     </div>
   </div>
@@ -87,7 +81,7 @@ Licence URI: http://www.os-templates.com/template-terms
       <!-- ################################################################################################ -->
       <div id="gallery">
         <figure>
-          <header class="heading">Gallery Title Goes Here</header>
+          <header class="heading">National and State Parks Gallery</header>
           <ul class="nospace clear">
             <li class="one_quarter first"><a href="#"><img src="#" alt=""></a></li>
             <li class="one_quarter"><a href="#"><img src="#" alt=""></a></li>
@@ -133,11 +127,11 @@ Licence URI: http://www.os-templates.com/template-terms
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<div class="wrapper row4 bgded overlay" style="background-image:url('../images/demo/backgrounds/02.png');">
+<div class="wrapper row4 bgded overlay" style="background-color:rgb(63, 60, 60);">
   <footer id="footer" class="hoc clear"> 
     <!-- ################################################################################################ -->
     <div class="one_third first">
-      <h3 class="heading">Geodarn</h3>
+      <h3 class="heading">Natty Parks</h3>
       <ul class="faico clear">
         <li><a class="faicon-facebook" href="#"><i class="fa fa-facebook"></i></a></li>
         <li><a class="faicon-twitter" href="#"><i class="fa fa-twitter"></i></a></li>
@@ -186,5 +180,6 @@ Licence URI: http://www.os-templates.com/template-terms
 <script src="https://national-parks.fcgit.net/statics/jquery.min.js"></script>
 <script src="https://national-parks.fcgit.net/statics/jquery.backtotop.js"></script>
 <script src="https://national-parks.fcgit.net/statics/jquery.mobilemenu.js"></script>
+<script src="https://js.stripe.com/v3/"></script>
 </body>
 </html>

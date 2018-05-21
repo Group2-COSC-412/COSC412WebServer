@@ -10,7 +10,7 @@ Purpose: Payment process of donations using stripe.
 -->
 <html>
 <head>
-<title>Natty Parks | Pages | Full Width</title>
+<title>PARK PASSES</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link href="https://national-parks.fcgit.net/statics/layout.css" rel="stylesheet" type="text/css" media="all">
@@ -26,35 +26,30 @@ Purpose: Payment process of donations using stripe.
     <header id="header" class="hoc clear"> 
       <!-- ################################################################################################ -->
       <div id="logo" class="fl_left">
-        <h1><a href="https://national-parks.fcgit.net/home/index.html">Geodarn</a></h1>
+        <h1><a href="https://national-parks.fcgit.net/home/index.html">Natty Parks</a></h1>
       </div>
       <nav id="mainav" class="fl_right">
-        <ul class="clear">
-          <li><a href="https://national-parks.fcgit.net/home/index">Home</a></li>
-          <li class="active"><a class="drop" href="#">Pages</a>
-            <ul>
+          <ul class="clear">
+              <li><a href="https://national-parks.fcgit.net/home/index">Home</a></li>
+              <li><a href="pages/states.html">Find a Park</a></li>
               <li><a href="https://national-parks.fcgit.net/home/gallery">Gallery</a></li>
-              <li class="active"><a href="#">Full Width</a></li>
-              <li><a href="#">Sidebar Left</a></li>
-              <li><a href="#">Sidebar Right</a></li>
-              <li><a href="#">Basic Grid</a></li>
-            </ul>
-          </li>
-          <li><a class="drop" href="#">Dropdown</a>
-            <ul>
-              <li><a href="#">Level 2</a></li>
-              <li><a class="drop" href="#">Level 2 + Drop</a>
+              <li><a class="drop">Get Involved</a>
                 <ul>
-                  <li><a href="#">Level 3</a></li>
-                  <li><a href="#">Level 3</a></li>
-                  <li><a href="#">Level 3</a></li>
+                  <li><a href="pages/payment.html">Donate</a></li>
+                  <li><a href="pages/volunteer.html">Volunteer</a></li>
+                  <li><a href="pages/sidebar-left.html">Events</a></li>
+                  <li><a href="pages/sidebar-right.html">Natty ParksGO</a></li>
                 </ul>
               </li>
-              <li><a href="#">Level 2</a></li>
+              <li><a class="drop">Login/Create Account</a>
+                <ul>
+                  <li><a href="pages/login.html">Login/Create Account</a></li>
+                  <li><a href="pages/full-width.html">Forgot Password</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Contact Us</a></li>
             </ul>
           </li>
-          <li><a href="#">Link Text</a></li>
-          <li><a href="#">Link Text</a></li>
         </ul>
       </nav>
       <!-- ################################################################################################ -->
@@ -64,45 +59,51 @@ Purpose: Payment process of donations using stripe.
   <!-- ################################################################################################ -->
   <!-- ################################################################################################ -->
   <div id="pageintro" class="hoc clear"> 
-    <h1 class="heading">DONATE</h1>
+    <h1 class="heading">PARK PASSES</h1>
   </div>
   <!-- ################################################################################################ -->
 </div>
-<!-- End Top Background Image Wrapper -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
 <div class="wrapper row3">
-  <main class="hoc container clear"> 
-    <!-- main body -->
-    <!-- ################################################################################################ -->
-    <!-- payment form -->
-    <div class="content"> 
-        <form action="/charge" method="post" id="payment-form">
-          <div class="form-row">
-            <label for="card-element">
-              Credit or debit card
-            </label>
-            <div id="card-element">
-              <!-- A Stripe Element will be inserted here. -->
+    <main class="hoc container clear"> 
+      <!-- main body -->
+      <!-- ################################################################################################ -->
+      <div class="sidebar one_quarter first"> 
+        <!-- ################################################################################################ -->
+
+        <img class="imgr borderedbox inspace-5" src="https://s3.amazonaws.com/cosc-412-s3/ParkImage_12.jpg" alt="">
+  
+        <!-- ################################################################################################ -->
+      </div>
+      <!-- ################################################################################################ -->
+      <!-- ################################################################################################ -->
+      <div class="content three_quarter"> 
+        <!-- ################################################################################################ -->
+        <h1> PURCHASE PASSES </h1>
+        <hr>
+          <form action="/charge" method="post" id="payment-form">
+            <div class="form-row">
+              <label for="card-element">
+                Credit or debit card
+              </label>
+              <div id="card-element">
+                <!-- A Stripe Element will be inserted here. -->
+              </div>
+          
+              <!-- Used to display form errors. -->
+              <div id="card-errors" role="alert"></div>
             </div>
-        
-            <!-- Used to display form errors. -->
-            <div id="card-errors" role="alert"></div>
-          </div>
-        
-          <button>Submit Payment</button>
-        </form>
+          
+            <button>Submit Payment</button>
+          </form>
+  
+        <!-- ################################################################################################ -->
+      </div>
+      <!-- ################################################################################################ -->
+      <!-- / main body -->
+      <div class="clear"></div>
+    </main>
+  </div>
 
-        
-    </div>
-
-    
-    <!-- ################################################################################################ -->
-    <!-- / main body -->
-    <div class="clear"></div>
-  </main>
-</div>
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
@@ -142,21 +143,27 @@ Purpose: Payment process of donations using stripe.
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <div class="wrapper row5">
-  <div id="copyright" class="hoc clear"> 
+  <div id="copyright" class="hoc clear">
     <!-- ################################################################################################ -->
-    <p class="fl_left">Copyright &copy; 2016 - All Rights Reserved - <a href="#">Domain Name</a></p>
-    <p class="fl_right">Template by <a target="_blank" href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
+    <p class="fl_left">Copyright &copy; 2016 - All Rights Reserved -
+      <a href="#">Domain Name</a>
+    </p>
+    <p class="fl_right">Template by
+      <a target="_blank" href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a>
+    </p>
     <!-- ################################################################################################ -->
   </div>
 </div>
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
+<a id="backtotop" href="#top">
+  <i class="fa fa-chevron-up"></i>
+</a>
 <!-- JAVASCRIPTS -->
 <script src="https://national-parks.fcgit.net/statics/jquery.min.js"></script>
 <script src="https://national-parks.fcgit.net/statics/jquery.backtotop.js"></script>
 <script src="https://national-parks.fcgit.net/statics/jquery.mobilemenu.js"></script>
-<script src="https://js.stripe.com/v3/"></script>
 </body>
+
 </html>

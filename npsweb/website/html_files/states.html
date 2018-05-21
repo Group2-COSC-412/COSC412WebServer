@@ -9,11 +9,12 @@ Licence URI: http://www.os-templates.com/template-terms
 <html>
 
 <head>
-  <title>Geodarn | Pages | Basic Grid</title>
+  <title>States</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <link href="https://national-parks.fcgit.net/statics/layout.css" rel="stylesheet" type="text/css" media="all">
   <style type="text/css">
+    /* DEMO ONLY */
 
     .container .demo {
       text-align: center;
@@ -39,6 +40,7 @@ Licence URI: http://www.os-templates.com/template-terms
       }
     }
 
+    /* DEMO ONLY */
   </style>
 </head>
 
@@ -47,14 +49,14 @@ Licence URI: http://www.os-templates.com/template-terms
   <!-- ################################################################################################ -->
   <!-- ################################################################################################ -->
   <!-- Top Background Image Wrapper -->
-  <div class="bgded overlay" style="background-image:url('https://s3.amazonaws.com/cosc-412-s3/ParkImage_2.jpg');">
+  <div class="bgded overlay" style="background-image:url('https://s3.amazonaws.com/cosc-412-s3/ParkImage_11.jpg')";>
     <!-- ################################################################################################ -->
     <div class="wrapper row1">
       <header id="header" class="hoc clear">
         <!-- ################################################################################################ -->
         <div id="logo" class="fl_left">
           <h1>
-            <a href="https://national-parks.fcgit.net/home/index">Geodarn</a>
+            <a href="https://national-parks.fcgit.net/home/index">Natty Parks</a>
           </h1>
         </div>
         <nav id="mainav" class="fl_right">
@@ -66,9 +68,9 @@ Licence URI: http://www.os-templates.com/template-terms
             <li class="active">
               <a class="drop" href="https://national-parks.fcgit.net/home/states">Find a park</a>
             </li>
-
+            <li><a href="https://national-parks.fcgit.net/home/gallery">Gallery</a></li>
             <li>
-              <a class="drop" href="#">Get Involved</a>
+              <a class="drop">Get Involved</a>
               <ul>
                 <li>
                   <a href="https://national-parks.fcgit.net/home/payment">Donate</a>
@@ -85,21 +87,21 @@ Licence URI: http://www.os-templates.com/template-terms
                 <li>
                   <a href="https://national-parks.fcgit.net/home/basic-grid">Basic Grid</a>
               </ul>
-            </li>
-            <li>
-              <a class="drop" href="#">Login/Create Account</a>
-              <ul>
-                <li>
-                  <a href="https://national-parks.fcgit.net/home/login">Login/Create Account</a>
-                </li>
-                <li>
-                  <a href="https://national-parks.fcgit.net/home/full-width">Forgot Password</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a href="#">Contact Us</a>
-            </li>
+              </li>
+              <li>
+                <a class="drop">Login/Create Account</a>
+                <ul>
+                  <li>
+                    <a href="https://national-parks.fcgit.net/home/login">Login/Create Account</a>
+                  </li>
+                  <li>
+                    <a href="https://national-parks.fcgit.net/home/full-width">Forgot Password</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="https://national-parks.fcgit.net/home/contact">Contact Us</a>
+              </li>
           </ul>
         </nav>
         <!-- ################################################################################################ -->
@@ -110,23 +112,7 @@ Licence URI: http://www.os-templates.com/template-terms
     <!-- ################################################################################################ -->
     <div class="wrapper row2">
       <div id="breadcrumb" class="hoc clear">
-        <!-- ################################################################################################ -->
-        <ul>
-          <li>
-            <a href="#">Home</a>
-          </li>
-          <li>
-            <a href="#">Lorem</a>
-          </li>
-          <li>
-            <a href="#">Ipsum</a>
-          </li>
-          <li>
-            <a href="#">Dolor</a>
-          </li>
-        </ul>
-        <!-- ################################################################################################ -->
-      </div>
+        <h2>Find A Park</h2>
     </div>
     <!-- ################################################################################################ -->
   </div>
@@ -140,9 +126,19 @@ Licence URI: http://www.os-templates.com/template-terms
       <!-- ################################################################################################ -->
       <div class="content">
         <!-- ################################################################################################ -->
-        <h2>Find A Park</h2>
-        <iframe src="https://createaclickablemap.com/map.php?&id=70605&maplocation=false&online=true" width="900" height="525" style="border: none;"></iframe>
-        <script>if (window.addEventListener) { window.addEventListener("message", function (event) { if (event.data.length >= 22) { if (event.data.substr(0, 22) == "__MM-LOCATION.REDIRECT") location = event.data.substr(22); } }, false); } else if (window.attachEvent) { window.attachEvent("message", function (event) { if (event.data.length >= 22) { if (event.data.substr(0, 22) == "__MM-LOCATION.REDIRECT") location = event.data.substr(22); } }, false); } </script>
+        <h2>Select A State</h2>
+        <iframe src="https://createaclickablemap.com/map.php?&id=70605&maplocation=false&online=true" width="540" height="315" style="border: none;"></iframe>
+        <script>if (window.addEventListener) {
+            window.addEventListener("message", function (event) {
+              if (event.data.length >= 22) {
+                if (event.data.substr(0, 22)
+                  == "__MM-LOCATION.REDIRECT") location = event.data.substr(22);
+              }
+            }, false);
+          } else if (window.attachEvent) {
+            window.attachEvent("message", function
+              (event) { if (event.data.length >= 22) { if (event.data.substr(0, 22) == "__MM-LOCATION.REDIRECT") location = event.data.substr(22); } }, false);
+          } </script>
         <style>
           ul.map li {
             float: left;
@@ -360,37 +356,53 @@ Licence URI: http://www.os-templates.com/template-terms
   <!-- ################################################################################################ -->
   <!-- ################################################################################################ -->
   <div class="wrapper row4 bgded overlay" style="background-color:rgb(63, 60, 60);">
-      <footer id="footer" class="hoc clear"> 
-        <!-- ################################################################################################ -->
-        <div class="one_third first">
-          <h3 class="heading">Natty Parks</h3>
-          <ul class="faico clear">
-            <li><a class="faicon-facebook" href="facebook.com"><i class="fa fa-facebook"></i></a></li>
-            <li><a class="faicon-twitter" href="twitter.com"><i class="fa fa-twitter"></i></a></li>
-            <li><a class="faicon-instagram" href="twitter.com"><i class="fa fa-instagram"></i></a></li>
-          </ul>
-        </div>
-        <div class="one_third">
-          <ul class="nospace meta">
-            <li class="btmspace-15"><i class="fa fa-phone"></i> +00 (123) 456 7890</li>
-            <li><i class="fa fa-envelope-o"></i> nattyparks@gmail.com</li>
-          </ul>
-        </div>
-        <div class="one_third">
-            <form method="post" action="#">
-              <fieldset>
-                <legend>Newsletter:</legend>
-                <div class="clear">
-                  <input type="text" value="" placeholder="Type Email Here&hellip;">
-                  <button class="fa fa-share" type="submit" title="Submit"><em>Submit</em></button>
-                </div>
-              </fieldset>
-            </form>
-          </div>
-      
-        <!-- ################################################################################################ -->
-      </footer>
-    </div>
+    <footer id="footer" class="hoc clear">
+      <!-- ################################################################################################ -->
+      <div class="one_third first">
+        <h3 class="heading">Natty Parks</h3>
+        <ul class="faico clear">
+          <li>
+            <a class="faicon-facebook" href="facebook.com">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="faicon-twitter" href="twitter.com">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="faicon-instagram" href="twitter.com">
+              <i class="fa fa-instagram"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="one_third">
+        <ul class="nospace meta">
+          <li class="btmspace-15">
+            <i class="fa fa-phone"></i> +00 (123) 456 7890</li>
+          <li>
+            <i class="fa fa-envelope-o"></i> nattyparks@gmail.com</li>
+        </ul>
+      </div>
+      <div class="one_third">
+        <form method="post" action="#">
+          <fieldset>
+            <legend>Newsletter:</legend>
+            <div class="clear">
+              <input type="text" value="" placeholder="Type Email Here&hellip;">
+              <button class="fa fa-share" type="submit" title="Submit">
+                <em>Submit</em>
+              </button>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+
+      <!-- ################################################################################################ -->
+    </footer>
+  </div>
   <!-- ################################################################################################ -->
   <!-- ################################################################################################ -->
   <!-- ################################################################################################ -->
