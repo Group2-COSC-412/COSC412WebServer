@@ -44,12 +44,16 @@ Licence URI: http://www.os-templates.com/template-terms
               <li><a href="https://national-parks.fcgit.net/home/nattygo">Natty ParksGO</a></li>
             </ul>
           </li>
-          <li><a class="drop">Login/Create Account</a>
-            <ul>
-              <li><a href="https://national-parks.fcgit.net/home/login">Login/Create Account</a></li>
-              <li><a href="https://national-parks.fcgit.net/home/full-width">Forgot Password</a></li>
-            </ul>
-          </li>
+          {% if not user.is_anonymous %}
+            <li><a href=""></a></li>
+          {% else %}
+            <li><a class="drop">Login/Create Account</a>
+              <ul>
+                <li><a href="pages/login.html">Login/Create Account</a></li>
+                <li><a href="pages/full-width.html">Forgot Password</a></li>
+              </ul>
+            </li>
+          {% endif %}
           <li><a href="#">Contact Us</a></li>
         </ul>
       </nav>
@@ -67,14 +71,14 @@ Licence URI: http://www.os-templates.com/template-terms
           <article>
             <p>Explore the parks like never before with our new interactive game...</p>
             <h3 class="heading">NATTY PARKSGO</h3>
-            <footer><a class="btn" href="#">PLAY</a></footer>
+            <footer><a class="btn" href="/home/nattygo">PLAY</a></footer>
           </article>
         </li>
         <li>
           <article>
             <p>Plan your next adventure!</p>
             <h3 class="heading">FIND A PARK</h3>
-            <footer><a class="btn" href="#">Explore</a></footer>
+            <footer><a class="btn" href="/home/states">Explore</a></footer>
           </article>
         </li>
 
@@ -121,7 +125,7 @@ Licence URI: http://www.os-templates.com/template-terms
             <h6 class="nospace">gallery</h6>
             <p>&hellip;</p>
           </div>
-          <footer><a href="home/gallery">More &raquo;</a></footer>
+          <footer><a href="/home/gallery">More &raquo;</a></footer>
         </article>
       </li>
     </ul>
@@ -182,9 +186,9 @@ Licence URI: http://www.os-templates.com/template-terms
 <!-- ################################################################################################ -->
 <a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
 <!-- JAVASCRIPTS -->
-<script src="statics/jquery.min.js"></script>
-<script src="statics/jquery.backtotop.js"></script>
-<script src="statics/jquery.mobilemenu.js"></script>
-<script src="statics/scripts/jquery.flexslider-min.js"></script>
+<script src="/statics/jquery.min.js"></script>
+<script src="/statics/jquery.backtotop.js"></script>
+<script src="/statics/jquery.mobilemenu.js"></script>
+<script src="/statics/scripts/jquery.flexslider-min.js"></script>
 </body>
 </html>
