@@ -10,7 +10,7 @@ Licence URI: http://www.os-templates.com/template-terms
 <head class="imgr borderedbox inspace-5" src="https://s3.amazonaws.com/cosc-412-s3/logo.png
 ">
 <title>NATTY PARKS</title>
-<meta charset="utf-8">
+<meta charset="utf-8"> 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link href="https://national-parks.fcgit.net/statics/layout.css" rel="stylesheet" type="text/css" media="all">
 </head>
@@ -45,12 +45,12 @@ Licence URI: http://www.os-templates.com/template-terms
             </ul>
           </li>
           {% if not user.is_anonymous %}
-            <li><a href="/auth/logout"></a></li>
+            <li><a href="/auth/logout">Logout</a></li>
           {% else %}
             <li><a class="drop">Login/Create Account</a>
               <ul>
-                <li><a href="pages/login.html">Login/Create Account</a></li>
-                <li><a href="pages/full-width.html">Forgot Password</a></li>
+                <li><a href="/home/login.html">Login/Create Account</a></li>
+                <li><a href="/home/full-width.html">Forgot Password</a></li>
               </ul>
             </li>
           {% endif %}
