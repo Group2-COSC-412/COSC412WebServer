@@ -206,10 +206,40 @@ PARK ID: 1
       for(var i = 0; i < data['hits'].length; i++){
         var date = new Date(data['hits'][i]['time'] * 1000);
         insertion += "<li><article>" +
-           data['hits'][i]['user'] + " - " + months[date.getMonth()] +
-           " " + date.getDate() + ", " + date.getFullYear() + "<br>Rating: " +
-           data['hits'][i]['rating'] + "/5<br>" +
-           data['hits'][i]['review'] + "</li></article><hr>";
+            data['hits'][i]['user'] + " - " + months[date.getMonth()] +
+            " " + date.getDate() + ", " + date.getFullYear() + "<br>Rating: " +
+            data['hits'][i]['rating'] + "/5<br>" +
+            data['hits'][i]['review'] + "</article></li><hr>";
+      }
+      insertion += "</ul>";
+      document.getElementById('reviews').innerHTML += insertion
+    }
+  });
+  $.ajax({
+    url: "https://national-parks.fcgit.net/api/es?index=picture&size=10&parkid=1",
+    dataType: 'json',
+    async: true,
+    success: function(data) {
+      var insertion = "<ul>";
+      for(var i = 0; i < data['hits'].length; i++){
+        var date = new Date(data['hits'][i]['time'] * 1000);
+        insertion += "<li><article>" + data['hits'][i]['user'] +
+            " - " + months[date.getMonth()] + " " + date.getDate() +
+            ", " + date.getFullYear() + "<br><img style=\"width:50%;\" src=\"" +
+            data['hits'][i]['picture_url'] + "\">" + "</article>";
+        $.ajax({
+          url: "https://national-parks.fcgit.net/api/es?index=comment&size=10&pictureid=" + data['hits'][i]['picture_id'] ,
+          dataType: 'json',
+          async: true,
+          success: function(comment_data) {
+            for(var i = 0; i < comment_data['hits'].length; i++){
+              insertion += "<article style=\"padding-left:10%;\">" + comment_data['hits'][i]['user'] +
+                  " - " + months[date.getMonth()] + " " + date.getDate() +
+                  ", " + date.getFullYear() + "<br>" + comment_data['hits'][i]['comment'] + "</article>"
+            }
+          }
+        });
+        insertion += "</li><hr>"
       }
       insertion += "</ul>";
       document.getElementById('reviews').innerHTML += insertion
