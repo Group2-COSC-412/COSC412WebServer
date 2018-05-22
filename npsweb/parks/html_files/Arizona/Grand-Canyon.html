@@ -237,7 +237,7 @@ PARK ID: 1
               var comment_date = new Date(comment_data['hits'][i]['time'] * 1000);
               insertion += "<li><article style=\"padding-left:10%;\">" + comment_data['hits'][i]['user'] +
                   " - " + months[comment_date.getMonth()] + " " + comment_date.getDate() +
-                  ", " + comment_date.getFullYear() + "<br>" + comment_data['hits'][i]['comment'] + "</article></li>";
+                  ", " + comment_date.getFullYear() + "<br>" + comment_data['hits'][i]['comment'] + "<hr></article></li>";
             }
             insertion += "</ul>";
           }
