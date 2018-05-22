@@ -34,7 +34,7 @@ Licence URI: http://www.os-templates.com/template-terms
                 <li><a href="/home/gallery">Gallery</a></li>
                 <li><a class="drop">Get Involved</a>
                   <ul>
-                    <li><a href="/home/payment.html">Donate</a></li>
+                    <li><a href="/home/payments.html">Donate</a></li>
                     <li><a href="/home/volunteer.html">Volunteer</a></li>
                     <li><a href="/home/sidebar-right.html">Natty ParksGO</a></li>
                   </ul>
@@ -157,12 +157,35 @@ Licence URI: http://www.os-templates.com/template-terms
        
 
        
-        <form>
+        <form action="/auth/create" method="POST"> {% csrf_token %}
           <div class="container">
-            <h1>NATTY GO</h1>
-            <p>Download Below</p>
+            <h1>Joining Our Journey?</h1>
+            <p>Create an account below!</p>
             <hr>
-            <p>link here</p>
+
+            <label for="first">
+              <b>First Name</b>
+            </label>
+            <input type="text" placeholder="Enter First Name" name="first" required>
+
+            <label for="last">
+              <b>Last Name</b>
+            </label>
+            <input type="text" placeholder="Enter Last Name" name="last" required>
+
+            <label for="email">
+              <b>Email</b>
+            </label>
+            <input type="text" placeholder="Enter Email" name="email" required>
+
+            <label for="Phone">
+              <b>Phone Number</b>
+            </label>
+            <input type="text" placeholder="Enter Phone Number" name="Phone" required>
+            <div class="clearfix">
+              <button type="button" class="cancelbtn">Cancel</button>
+              <button type="submit" class="signupbtn">Sign-Up</button>
+            </div>
           </div>
         </form>
         <!-- / main body -->
