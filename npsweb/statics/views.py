@@ -12,5 +12,7 @@ def statics(request, file: str):
     elif file.endswith('.js'):
         return HttpResponse(open(WK_DIR+'/static_files/'+file), content_type='application/javascript')
     elif file.endswith('.zip'):
-        return HttpResponse(open(WK_DIR+'/static_files/'+file, 'rb').read, content_type='application/zip')
+        response = HttpResponse(open(WK_DIR+'/static_files/'+file, 'rb').read, content_type='application/zip')
+        response['Content-Disposition'] = 'attachment;filename=' + file
+        return response
     return FileResponse(open(WK_DIR+'/static_files/'+file, 'rb'))
