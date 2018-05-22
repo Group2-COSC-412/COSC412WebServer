@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="03e4180d-bb76-43c7-b79c-5172c71fd2d8" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/npsweb/parks/html_files/Arizona/Grand-Canyon.html" afterPath="$PROJECT_DIR$/npsweb/parks/html_files/Arizona/Grand-Canyon.html" />
-    </list>
+    <list default="true" id="03e4180d-bb76-43c7-b79c-5172c71fd2d8" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,7 +18,7 @@
         <entry file="file://$PROJECT_DIR$/npsweb/api/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="324">
-              <caret line="93" column="38" lean-forward="true" selection-start-line="93" selection-start-column="38" selection-end-line="93" selection-end-column="38" />
+              <caret line="93" column="38" lean-forward="false" selection-start-line="93" selection-start-column="38" selection-end-line="93" selection-end-column="38" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -655,7 +653,7 @@
         <state relative-caret-position="288">
           <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding>
-            <element signature="e#0#35#0" expanded="true" />
+            <element signature="e#0#35#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -663,7 +661,7 @@
     <entry file="file://$PROJECT_DIR$/npsweb/api/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
-          <caret line="93" column="38" lean-forward="true" selection-start-line="93" selection-start-column="38" selection-end-line="93" selection-end-column="38" />
+          <caret line="93" column="38" lean-forward="false" selection-start-line="93" selection-start-column="38" selection-end-line="93" selection-end-column="38" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
