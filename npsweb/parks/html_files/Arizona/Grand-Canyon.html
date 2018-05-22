@@ -227,18 +227,16 @@ PARK ID: 1
             " - " + months[date.getMonth()] + " " + date.getDate() +
             ", " + date.getFullYear() + "<br><img style=\"width:50%;\" src=\"" +
             data['hits'][i]['picture_url'] + "\">" + "</article>";
-        console.log(data['hits'][i]['picture_id']);
         $.ajax({
           url: "https://national-parks.fcgit.net/api/es?index=comment&size=10&pictureid=" + data['hits'][i]['picture_id'] ,
           dataType: 'json',
           async: true,
           success: function(comment_data) {
-            console.log(comment_data['hits'].length);
             for(var i = 0; i < comment_data['hits'].length; i++){
-              console.log(comment_data['hits'][i]);
+              var comment_date = new Date(comment_data['hits'][i]['time'] * 1000);
               insertion += "<article style=\"padding-left:10%;\">" + comment_data['hits'][i]['user'] +
-                  " - " + months[date.getMonth()] + " " + date.getDate() +
-                  ", " + date.getFullYear() + "<br>" + comment_data['hits'][i]['comment'] + "</article>";
+                  " - " + months[comment_date.getMonth()] + " " + comment_date.getDate() +
+                  ", " + comment_date.getFullYear() + "<br>" + comment_data['hits'][i]['comment'] + "</article>";
             }
           }
         });
