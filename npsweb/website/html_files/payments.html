@@ -92,21 +92,18 @@ Purpose: Payment process of donations using stripe.
             <!-- ################################################################################################ -->
             <h1> MAKE A DONATION </h1>
             <hr>
-              <form action="/charge" method="post" id="payment-form">
-                <div class="form-row">
-                  <label for="card-element">
-                    Credit or debit card
-                  </label>
-                  <div id="card-element">
-                    <!-- A Stripe Element will be inserted here. -->
-                  </div>
-              
-                  <!-- Used to display form errors. -->
-                  <div id="card-errors" role="alert"></div>
-                </div>
-              
-                <button>Submit Payment</button>
-              </form>
+            <form action="your-server-side-code" method="POST">
+              <script
+                src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                data-key="pk_test_6pRNASCoBOKtIshFeQd4XMUh"
+                data-amount="999"
+                data-name="Natty Parks"
+                data-description="Pass Payment"
+                data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                data-locale="auto"
+                data-zip-code="true">
+              </script>
+            </form>
       
         <!-- ################################################################################################ -->
       </div>
