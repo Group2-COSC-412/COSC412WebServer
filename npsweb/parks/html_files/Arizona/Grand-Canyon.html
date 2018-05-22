@@ -233,8 +233,9 @@ PARK ID: 1
           dataType: 'json',
           async: true,
           success: function(comment_data) {
-            console.log(comment_data);
+            console.log(comment_data['hits'].length);
             for(var i = 0; i < comment_data['hits'].length; i++){
+              console.log(comment_data['hits'][i]);
               insertion += "<article style=\"padding-left:10%;\">" + comment_data['hits'][i]['user'] +
                   " - " + months[date.getMonth()] + " " + date.getDate() +
                   ", " + date.getFullYear() + "<br>" + comment_data['hits'][i]['comment'] + "</article>";
