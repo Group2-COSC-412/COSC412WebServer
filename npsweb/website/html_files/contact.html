@@ -10,7 +10,7 @@ Purpose: Payment process of donations using stripe.
 -->
 <html>
 <head>
-<title>PARK PASSES</title>
+<title>Contact</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link href="/statics/layout.css" rel="stylesheet" type="text/css" media="all">
@@ -62,7 +62,7 @@ Purpose: Payment process of donations using stripe.
   <!-- ################################################################################################ -->
   <!-- ################################################################################################ -->
   <div id="breadcrumb" class="hoc clear"> 
-    <h1 class="heading">PARK PASSES</h1>
+    <h1 class="heading">CONTACT US</h1>
   </div>
   <!-- ################################################################################################ -->
 </div>
@@ -75,74 +75,52 @@ Purpose: Payment process of donations using stripe.
         <!-- ################################################################################################ -->
 
         <img class="imgr borderedbox inspace-5" src="https://s3.amazonaws.com/cosc-412-s3/ParkImage_12.jpg" alt="">
-  
+
+        <h1>Information</h1>
+        <div class="group btmspace-50 demo">
+                <div class="one_half first">
+                    <p>Phone Number: (123) 456 7890 </p>
+                </div>
+
+                <div class="one_half">
+                    <p>Location: Washington, DC</p>
+                </div>
+              </div>
         <!-- ################################################################################################ -->
       </div>
       <!-- ################################################################################################ -->
       <!-- ################################################################################################ -->
       <div class="content three_quarter"> 
         <!-- ################################################################################################ -->
-        <h1> PURCHASE PASSES </h1> 
+        
+        <h1>Questions? Let us help you.</h1>
         <hr>
-        <div class="group btmspace-50 demo">
-            <div class="one_third first">
-              <h1>WEEKLY PASS</h1> 
-              <p>7-Day Pass</p> 
-              <form action="/charge" method="post" id="payment-form">
-                  <div class="form-row">
-                    <label for="card-element">
-                      Credit or debit card
-                    </label>
-                    <div id="card-element">
-                      <!-- A Stripe Element will be inserted here. -->
-                    </div>
-                
-                    <!-- Used to display form errors. -->
-                    <div id="card-errors" role="alert"></div>
-                  </div>
-                
-                  <button>Purchase</button>
-                </form>
-            </div>
-            <div class="one_third">
-              <h1>MONTHLY PASS</h1>
-              <p>30-Day Pass</p>
-                <form action="/charge" method="post" id="payment-form">
-                  <div class="form-row">
-                    <label for="card-element">
-                      Credit or debit card
-                    </label>
-                    <div id="card-element">
-                      <!-- A Stripe Element will be inserted here. -->
-                    </div>
-                
-                    <!-- Used to display form errors. -->
-                    <div id="card-errors" role="alert"></div>
-                  </div>
-                
-                  <button>Purchase</button>
-                </form>
-            </div>
-            <div class="one_third">
-              <h1>YEARLY PASS</h1>
-              <p>365-Day Pass</p>
-                <form action="/charge" method="post" id="payment-form">
-                  <div class="form-row">
-                    <label for="card-element">
-                      Credit or debit card
-                    </label>
-                    <div id="card-element">
-                      <!-- A Stripe Element will be inserted here. -->
-                    </div>
-                
-                    <!-- Used to display form errors. -->
-                    <div id="card-errors" role="alert"></div>
-                  </div>
-                
-                  <button>Purchase</button>
-                </form>
-            </div>
-          </div>  
+  
+                    <h2>Write A Comment</h2>
+                    <form action="#" method="post">
+                      <div class="one_third first">
+                        <label for="name">Name <span>*</span></label>
+                        <input type="text" name="name" id="name" value="" size="22" required>
+                      </div>
+                      <div class="one_third">
+                        <label for="email">Mail <span>*</span></label>
+                        <input type="email" name="email" id="email" value="" size="22" required>
+                      </div>
+                      <div class="block clear">
+                        <label for="comment">Your Question</label>
+                        <textarea name="comment" id="comment" cols="25" rows="10"></textarea>
+                      </div>
+                      <div>
+                        <input type="submit" name="submit" value="Submit Form">
+                        &nbsp;
+                        <input type="reset" name="reset" value="Reset Form">
+                      </div>
+                    </form>                    
+
+            
+
+              </div>
+ 
         <!-- ################################################################################################ -->
       </div>
       <!-- ################################################################################################ -->
