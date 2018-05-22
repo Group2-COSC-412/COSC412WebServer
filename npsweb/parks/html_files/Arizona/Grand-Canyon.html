@@ -5,6 +5,8 @@ Author: <a href="http://www.os-templates.com/">OS Templates</a>
 Author URI: http://www.os-templates.com/
 Licence: Free to use under our free template licence terms
 Licence URI: http://www.os-templates.com/template-terms
+
+PARK ID: 1
 -->
 <html>
 <head>
@@ -94,45 +96,17 @@ Licence URI: http://www.os-templates.com/template-terms
     <!--comment section-->
     <div class="wrapper row3">
       <main class="hoc container clear"> 
-      <div id="comments">
+      <div id="reviews">
           <h2>Reviews</h2>
           <hr>
-          <ul>
-            <li>
-              <article>
-                <!--REVIEWS GO IN HERE-->
-              </article>
-            </li>
-            <li>
-              <article>
-              
-              </article>
-            </li>
-            <li>
-              <article>
-                
-              </article>
-            </li>
-          </ul>
+
+      </div>
+      <div id="pictures">
           <h2>Pictures</h2>
           <hr>
-        <ul>
-          <li>
-            <article>
-              <!--PICTURES GO IN HERE-->
-            </article>
-          </li>
-          <li>
-            <article>
-            
-            </article>
-          </li>
-          <li>
-            <article>
-              
-            </article>
-          </li>
-        </ul>
+
+      </div>
+      <div id="comments">
         <h2>Write A Comment</h2>
         <form action="#" method="post">
           <div class="one_third first">
@@ -219,5 +193,26 @@ Licence URI: http://www.os-templates.com/template-terms
 <script src="https://national-parks.fcgit.net/statics/jquery.min.js"></script>
 <script src="https://national-parks.fcgit.net/statics/jquery.backtotop.js"></script>
 <script src="https://national-parks.fcgit.net/statics/jquery.mobilemenu.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script defer>
+  $.ajax({
+    url: "https://national-parks.fcgit.net/api/es?index=review&size=10&parkid=1",
+    dataType: 'json',
+    async: true,
+    success: function(data) {
+      console.log(data['hits'][i])
+      document.getElementById('reviews').innerHTML += "<ul>";
+      for(var i = 0; i < data['hits'].length; i++){
+        var date = new Date(data['hits'][i]['time']);
+        document.getElementById('reviews').innerHTML += "<li>" +
+           data['hits'][i]['user'] + " - " + date.getMonth() +
+           " " + date.getDate() + ", " + date.getFullYear() + "<br>Rating: " +
+           data['hits'][i]['rating'] + "/5<br>" +
+           data['hits'][i]['review'] + "</li>";
+      }
+      document.getElementById('reviews').innerHTML += "</ul>";
+    }
+  });
+</script>
 </body>
 </html>
