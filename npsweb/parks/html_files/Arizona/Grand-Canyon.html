@@ -196,10 +196,11 @@ PARK ID: 1
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script defer>
   $.ajax({
-    url: "https://national-parks.fcgit.net/api/es?index=reviews&size=10&parkid=1",
+    url: "https://national-parks.fcgit.net/api/es?index=review&size=10&parkid=1",
     dataType: 'json',
-    async: false,
+    async: true,
     success: function(data) {
+      console.log(data['hits'][i])
       document.getElementById('reviews').innerHTML += "<ul>";
       for(var i = 0; i < data['hits'].length; i++){
         var date = new Date(data['hits'][i]['time']);
