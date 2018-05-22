@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="03e4180d-bb76-43c7-b79c-5172c71fd2d8" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/npsweb/statics/static_files/National-Parks-Game.zip" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/npsweb/website/html_files/nattygo.html" afterPath="$PROJECT_DIR$/npsweb/website/html_files/nattygo.html" />
-    </list>
+    <list default="true" id="03e4180d-bb76-43c7-b79c-5172c71fd2d8" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
