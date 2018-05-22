@@ -40,15 +40,15 @@ PARK ID: 1
               </ul>
             </li>
             {% if not user.is_anonymous %}
-                <li><a href="/auth/logout">Logout</a></li>
-              {% else %}
-                <li><a class="drop">Login/Create Account</a>
-                  <ul>
-                    <li><a href="/home/login.html">Login/Create Account</a></li>
-                    <li><a href="/home/full-width.html">Forgot Password</a></li>
-                  </ul>
-                </li>
-              {% endif %}
+              <li><a href="/auth/logout">Logout</a></li>
+            {% else %}
+              <li><a class="drop">Login/Create Account</a>
+                <ul>
+                  <li><a href="/home/login.html">Login/Create Account</a></li>
+                  <li><a href="/home/full-width.html">Forgot Password</a></li>
+                </ul>
+              </li>
+            {% endif %}
             <li><a href="#">Contact Us</a></li>
           </ul>
         </nav>
@@ -96,17 +96,17 @@ PARK ID: 1
     <!--comment section-->
     <div class="wrapper row3">
       <main class="hoc container clear"> 
-      <div id="reviews">
+      <div id="reviews" class="comments">
           <h2>Reviews</h2>
           <hr>
 
       </div>
-      <div id="pictures">
+      <div id="pictures" class="comments">
           <h2>Pictures</h2>
           <hr>
 
       </div>
-      <div id="comments">
+      <div id="comments" class="comments">
         <h2>Write A Comment</h2>
         <form action="#" method="post">
           <div class="one_third first">
@@ -195,17 +195,18 @@ PARK ID: 1
 <script src="https://national-parks.fcgit.net/statics/jquery.mobilemenu.js"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script defer>
+  var months = ["Jan", "Feb", "Mar", "Apr", "May",
+      "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
   $.ajax({
     url: "https://national-parks.fcgit.net/api/es?index=review&size=10&parkid=1",
     dataType: 'json',
     async: true,
     success: function(data) {
-      console.log(data['hits'][i])
       document.getElementById('reviews').innerHTML += "<ul>";
       for(var i = 0; i < data['hits'].length; i++){
         var date = new Date(data['hits'][i]['time'] * 1000);
         document.getElementById('reviews').innerHTML += "<li><article>" +
-           data['hits'][i]['user'] + " - " + date.getMonth() +
+           data['hits'][i]['user'] + " - " + months[date.getMonth()] +
            " " + date.getDate() + ", " + date.getFullYear() + "<br>Rating: " +
            data['hits'][i]['rating'] + "/5<br>" +
            data['hits'][i]['review'] + "</li></article><hr>";
