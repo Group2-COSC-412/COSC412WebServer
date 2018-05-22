@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<!--
+Template Name: Geodarn
+Author: <a href="http://www.os-templates.com/">OS Templates</a>
+Author URI: http://www.os-templates.com/
+Licence: Free to use under our free template licence terms
+Licence URI: http://www.os-templates.com/template-terms
+-->
+<html>
+
+<head>
+    <title>Zion </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="https://national-parks.fcgit.net/statics/layout.css" rel="stylesheet" type="text/css" media="all">
+</head>
+
+<body id="top">
+    <!-- ################################################################################################ -->
+    <!-- ################################################################################################ -->
+    <!-- ################################################################################################ -->
+    <!-- Top Background Image Wrapper -->
+    <div class="bgded overlay" style="background-color: black;">
+        <!-- ################################################################################################ -->
+        <div class="wrapper row1">
+            <header id="header" class="hoc clear">
+                <!-- Directory -->
+                <div id="logo" class="fl_left">
+                    <h1>
+                        <a href="https://national-parks.fcgit.net/home/index">NATTY PARKS</a>
+                    </h1>
+                </div>
+                <nav id="mainav" class="fl_right">
+                    <ul class="clear">
+                        <li class="active">
+                            <a href="https://national-parks.fcgit.net/home/index">Home</a>
+                        </li>
+                        <li>
+                            <a href="https://national-parks.fcgit.net/home/states">Find a Park</a>
+                        </li>
+                        <li>
+                            <a class="drop" href="#">Get Involved</a>
+                            <ul>
+                                <li>
+                                    <a href="https://national-parks.fcgit.net/home/payment">Donate</a>
+                                </li>
+                                <li>
+                                    <a href="https://national-parks.fcgit.net/home/volunteer">Volunteer</a>
+                                </li>
+                                <li>
+                                    <a href="#">Events</a>
+                                </li>
+                                <li>
+                                    <a href="#">Natty ParksGO</a>
+                                </li>
+                            </ul>
+                        </li>
+                        {% if not user.is_anonymous %}
+                        <li>
+                            <a href="/auth/logout"></a>
+                        </li>
+                        {% else %}
+                        <li>
+                            <a class="drop">Login/Create Account</a>
+                            <ul>
+                                <li>
+                                    <a href="pages/login.html">Login/Create Account</a>
+                                </li>
+                                <li>
+                                    <a href="pages/full-width.html">Forgot Password</a>
+                                </li>
+                            </ul>
+                        </li>
+                        {% endif %}
+                        <li>
+                            <a href="#">Contact Us</a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- ################################################################################################ -->
+            </header>
+        </div>
+        <!-- ################################################################################################ -->
+        <!-- ################################################################################################ -->
+        <!-- ################################################################################################ -->
+        <div class="wrapper row2">
+            <div id="breadcrumb" class="hoc clear">
+                <!-- ################################################################################################ -->
+                <ul>
+                    <li>
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">Find A Park</a>
+                    </li>
+                    <li>
+                        <a href="#">Zion</a>
+                    </li>
+                    <li>
+                        <a href="#">Utah</a>
+                    </li>
+                </ul>
+                <!-- ################################################################################################ -->
+            </div>
+        </div>
+        <!-- ################################################################################################ -->
+    </div>
+    <div class="wrapper row3">
+        <main class="hoc container clear">
+            <div class="group btmspace-50 demo">
+                <div class="one_half first">
+                    <h2>State Parks</h2>
+
+                    <ul>
+                        <li>
+                            <a href="#">Assateague State Park</a>
+                        </li>
+                        <li>
+                            <a href="#">Big Run State Park</a>
+                        </li>
+                        <li>
+                            <a href="#">Bill Burton Fishing Pier State Park</a>
+                        </li>
+                        <li>
+                            <a href="#">Calvert Cliffs State Park</a>
+                        </li>
+                        <li>
+                            <a href="#">Casselman River Bridge State Park</a>
+                        </li>
+                        <li>
+                            <a href="#">Chapel Point State Park</a>
+                        </li>
+                        <li>
+                            <a href="#">Chapman State Park</a>
+                        </li>
+                        <li>
+                            <a href="#">Cunningham Falls State Park</a>
+                        </li>
+                        <li>
+                            <a href="#">Dans Mountain State Park</a>
+                        </li>
+                        <li>
+                            <a href="#">Deep Creek Lake State Park</a>
+                        </li>
+                        <li>
+                            <a href="#">Elk Neck State Park</a>
+                        </li>
+                        <li>
+                            <a href="#">Fort Frederick State Park</a>
+                        </li>
+                        <li>
+                            <a href="#">Gambrill State Park</a>
+                        </li>
+                        <li>
+                            <a href="#">Gathland State Park</a>
+                        </li>
+                        <li>
+                            <a href="#">Greenbrier State Park</a>
+                        </li>
+                        <li>
+                            <a href="#">Greenwell State Park</a>
+                        </li>
+                        <li>
+                            <a href="/home/">Gunpowder Falls State Park</a>
+                        </li>
+                        <li>
+                            <a href="#">Harriet Tubman Underground Railroad State Park</a>
+                        </li>
+                        <li>
+                            <a href="#">Hart-Miller Island State Park</a>
+                        </li>
+                        <li>
+                            <a href="#">Janes Island State Park</a>
+                        </li>
+                        <li>
+                            <a href="#">Jonas Green State Park</a>
+                        </li>
+                        <li>
+                            <a href="#">Love Point State Park</a>
+                        </li>
+                        <li>
+                            <a href="#">Matthew Henson State Park</a>
+                        </li>
+                        <li>
+                            <a href="#">New Germany State Park</a>
+                        </li>
+                        <li>
+                            <a href="#">Newtowne Neck State Park</a>
+                        </li>
+                        <li>
+                            <a href="#">North Point State Battlefield</a>
+                        </li>
+                        <li>
+                            <a href="#">North Point State Park</a>
+                        </li>
+                        <li>
+                            <a href="#">Palmer State Park</a>
+                        </li>
+                        <li>
+                            <a href="#">Patapsco Valley State Park</a>
+                        </li>
+                        <li>
+                            <a href="#">Rocks State Park</a>
+                        </li>
+                        <li>
+                            <a href="#">Rocky Gap State Park</a>
+                        </li>
+                        <li>
+                            <a href="#">Rosaryville State Park</a>
+                        </li>
+                        <li>
+                            <a href="#">Sandy Point State Park</a>
+                        </li>
+                        <li>
+                            <a href="#">Seneca Creek State Park</a>
+                        </li>
+                        <li>
+                            <a href="#">Smallwood State Park</a>
+                        </li>
+                        <li>
+                            <a href="#">South Mountain State Battlefield</a>
+                        </li>
+                        <li>
+                            <a href="#">South Mountain State Park</a>
+                        </li>
+                        <li>
+                            <a href="#">St. Clement's Island State Park</a>
+                        </li>
+                        <li>
+                            <a href="#">Wills Mountain State Park</a>
+                        </li>
+                        <li>
+                            <a href="#">Wye Oak State Park</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="one_half">
+                    <h2>National Parks</h2>
+                    <ul>
+                    <li><a href="#">Antietam National Battlefield</a></li>
+                    <li><a href="#">Appalachian National Scenic Trail</a></li>
+                    <li><a href="#">Assateague Island National Seashore</a></li>
+                    <li><a href="#">Baltimore-Washington Parkway</a></li>
+                    <li><a href="#">Captain John Smith Chesapeake National Historic Trail</a></li>
+                    <li><a href="#">Catoctin Mountain Park</a></li>
+                    <li><a href="#">Chesapeake and Ohio Canal National Historical Park</a></li>
+                    <li><a href="#">Chesapeake Bay Gateways Network</a></li>
+                    <li><a href="#">Clara Barton National Historic Site</a></li>
+                    <li><a href="#">Fort Foote Park</a></li>
+                    <li><a href="#">Fort McHenry National Monument and Historic Shrine</a></li>
+                    <li><a href="#">Fort Washington Park[A]</a></li>
+                    <li><a href="#">George Washington Memorial Parkway</a></li>
+                    <li><a href="#">Glen Echo Park</a></li>
+                    <li><a href="#">Greenbelt Park</a></li>
+                    <li><a href="#">Hampton National Historic Site</a></li>
+                    <li><a href="#">Harmony Hall</a></li>
+                    <li><a href="#">Monocacy National Battlefield</a></li>
+                    <li><a href="#">Oxon Cove Park and Oxon Hill Farm</a></li>
+                    <li><a href="#">Piscataway Park</a></li>
+                    <li><a href="#">Potomac Heritage National Scenic Trail</a></li>
+                    <li><a href="#">Suitland Parkway</a></li>
+                    <li><a href="#">Thomas Stone National Historic Site</a></li>
+                    </ul>
+                </div>
+            </div>
+
+    </div>
+    <div class="clear"></div>
+    </main>
+    </div>
+    <!-- ################################################################################################ -->
+    <!-- ################################################################################################ -->
+    <!-- ################################################################################################ -->
+    <div class="wrapper row4 bgded overlay" style="background-color:rgb(63, 60, 60);">
+        <footer id="footer" class="hoc clear">
+            <!-- ################################################################################################ -->
+            <div class="one_third first">
+                <h3 class="heading">Natty Parks</h3>
+                <ul class="faico clear">
+                    <li>
+                        <a class="faicon-facebook" href="facebook.com">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="faicon-twitter" href="twitter.com">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="faicon-instagram" href="https://www.instagram.com/nattyparks_project/">
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="one_third">
+                <ul class="nospace meta">
+                    <li class="btmspace-15">
+                        <i class="fa fa-phone"></i> +00 (123) 456 7890</li>
+                    <li>
+                        <i class="fa fa-envelope-o"></i> nattyparks@gmail.com</li>
+                </ul>
+            </div>
+            <div class="one_third">
+                <form method="post" action="#">
+                    <fieldset>
+                        <legend>Newsletter:</legend>
+                        <div class="clear">
+                            <input type="text" value="" placeholder="Type Email Here&hellip;">
+                            <button class="fa fa-share" type="submit" title="Submit">
+                                <em>Submit</em>
+                            </button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+
+            <!-- ################################################################################################ -->
+        </footer>
+    </div>
+    <!-- ################################################################################################ -->
+    <!-- ################################################################################################ -->
+    <!-- ################################################################################################ -->
+    <div class="wrapper row5">
+        <div id="copyright" class="hoc clear">
+            <!-- ################################################################################################ -->
+            <p class="fl_left">Copyright &copy; 2016 - All Rights Reserved -
+                <a href="#">Domain Name</a>
+            </p>
+            <p class="fl_right">Template by
+                <a target="_blank" href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a>
+            </p>
+            <!-- ################################################################################################ -->
+        </div>
+    </div>
+    <!-- ################################################################################################ -->
+    <!-- ################################################################################################ -->
+    <!-- ################################################################################################ -->
+    <a id="backtotop" href="#top">
+        <i class="fa fa-chevron-up"></i>
+    </a>
+    <!-- JAVASCRIPTS -->
+    <script src="https://national-parks.fcgit.net/statics/jquery.min.js"></script>
+    <script src="https://national-parks.fcgit.net/statics/jquery.backtotop.js"></script>
+    <script src="https://national-parks.fcgit.net/statics/jquery.mobilemenu.js"></script>
+</body>
+
+</html>
