@@ -10,7 +10,7 @@ Purpose: Payment process of donations using stripe.
 -->
 <html>
 <head>
-<title>PARK PASSES</title>
+<title>Donations</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link href="https://national-parks.fcgit.net/statics/layout.css" rel="stylesheet" type="text/css" media="all">
@@ -20,7 +20,7 @@ Purpose: Payment process of donations using stripe.
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- Top Background Image Wrapper -->
-<div class="bgded overlay" style="background-image:url('https://s3.amazonaws.com/cosc-412-s3/ParkImage_2.jpg');"> 
+<div class="bgded overlay" style="background-image:url('https://s3.amazonaws.com/cosc-412-s3/ParkImage_14.jpg');"> 
   <!-- ################################################################################################ -->
   <div class="wrapper row1">
     <header id="header" class="hoc clear"> 
@@ -62,7 +62,7 @@ Purpose: Payment process of donations using stripe.
   <!-- ################################################################################################ -->
   <!-- ################################################################################################ -->
   <div id="pageintro" class="hoc clear"> 
-    <h1 class="heading">PARK PASSES</h1>
+    <h1 class="heading">DONATE</h1>
   </div>
   <!-- ################################################################################################ -->
 </div>
@@ -72,33 +72,37 @@ Purpose: Payment process of donations using stripe.
     <!-- ################################################################################################ -->
     <!-- payment form -->
     <div class="sidebar one_quarter first"> 
-        <!-- ################################################################################################ -->
-
-        <img class="imgr borderedbox inspace-5" src="https://s3.amazonaws.com/cosc-412-s3/ParkImage_12.jpg" alt="">
-  
-        <!-- ################################################################################################ -->
-      </div>
-      <!-- ################################################################################################ -->
-      <!-- ################################################################################################ -->
-      <div class="content three_quarter"> 
-        <!-- ################################################################################################ -->
-        <h1> PURCHASE PASSES </h1>
-        <hr>
-          <form action="/charge" method="post" id="payment-form">
-            <div class="form-row">
-              <label for="card-element">
-                Credit or debit card
-              </label>
-              <div id="card-element">
-                <!-- A Stripe Element will be inserted here. -->
-              </div>
-          
-              <!-- Used to display form errors. -->
-              <div id="card-errors" role="alert"></div>
-            </div>
-          
-            <button>Submit Payment</button>
-          </form>
+            <!-- ################################################################################################ -->
+    
+            <h2>Donator of the Week!</h2>
+            <img class="imgr borderedbox inspace-5" src="https://s3.amazonaws.com/cosc-412-s3/ParkImage_9.jpg" alt="">
+            <h2>John Doe</h2>
+            <hr>
+            <p>Thank you, John Doe for your contributions towards the preservation of our parks. </p>
+            <!-- ################################################################################################ -->
+          </div>
+          <!-- ################################################################################################ -->
+          <!-- ################################################################################################ -->
+          <div class="content three_quarter"> 
+            <!-- ################################################################################################ -->
+            <h1> MAKE A DONATION </h1>
+            <hr>
+              <form action="/charge" method="post" id="payment-form">
+                <div class="form-row">
+                  <label for="card-element">
+                    Credit or debit card
+                  </label>
+                  <div id="card-element">
+                    <!-- A Stripe Element will be inserted here. -->
+                  </div>
+              
+                  <!-- Used to display form errors. -->
+                  <div id="card-errors" role="alert"></div>
+                </div>
+              
+                <button>Submit Payment</button>
+              </form>
+      
         <!-- ################################################################################################ -->
       </div>
       <!-- ################################################################################################ -->
