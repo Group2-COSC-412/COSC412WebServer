@@ -5,6 +5,8 @@ Author: <a href="http://www.os-templates.com/">OS Templates</a>
 Author URI: http://www.os-templates.com/
 Licence: Free to use under our free template licence terms
 Licence URI: http://www.os-templates.com/template-terms
+
+PARK ID: 2
 -->
 <html>
 <head>
@@ -94,73 +96,45 @@ Licence URI: http://www.os-templates.com/template-terms
 
     <!--comment section-->
     <div class="wrapper row3">
-      <main class="hoc container clear"> 
-      <div id="comments">
-          <h2>Reviews</h2>
-          <hr>
-          <ul>
-            <li>
-              <article>
-                <!--REVIEWS GO IN HERE-->
-              </article>
-            </li>
-            <li>
-              <article>
-
-              </article>
-            </li>
-            <li>
-              <article>
-
-              </article>
-            </li>
-          </ul>
-          <h2>Pictures</h2>
-          <hr>
-        <ul>
-          <li>
-            <article>
-              <!--PICTURES GO IN HERE-->
-            </article>
-          </li>
-          <li>
-            <article>
-            
-            </article>
-          </li>
-          <li>
-            <article>
-              
-            </article>
-          </li>
-        </ul>
-        <h2>Write A Comment</h2>
-        <form action="#" method="post">
-          <div class="one_third first">
-            <label for="name">Name <span>*</span></label>
-            <input type="text" name="name" id="name" value="" size="22" required>
-          </div>
-          <div class="one_third">
-            <label for="email">Mail <span>*</span></label>
-            <input type="email" name="email" id="email" value="" size="22" required>
-          </div>
-          <div class="one_third">
-            <label for="url">Website</label>
-            <input type="url" name="url" id="url" value="" size="22">
-          </div>
-          <div class="block clear">
-            <label for="comment">Your Comment</label>
-            <textarea name="comment" id="comment" cols="25" rows="10"></textarea>
-          </div>
-          <div>
-            <input type="submit" name="submit" value="Submit Form">
-            &nbsp;
-            <input type="reset" name="reset" value="Reset Form">
-          </div>
-        </form>
+        <div id="comments">
+        <main class="hoc container clear"> 
+        <div id="reviews">
+            <h2>Reviews</h2>
+            <hr>
+  
+        </div>
+        <div id="pictures">
+            <h2>Pictures</h2>
+            <hr>
+  
+        </div>
+          <h2>Write A Comment</h2>
+          <form action="#" method="post">
+            <div class="one_third first">
+              <label for="name">Name <span>*</span></label>
+              <input type="text" name="name" id="name" value="" size="22" required>
+            </div>
+            <div class="one_third">
+              <label for="email">Mail <span>*</span></label>
+              <input type="email" name="email" id="email" value="" size="22" required>
+            </div>
+            <div class="one_third">
+              <label for="url">Website</label>
+              <input type="url" name="url" id="url" value="" size="22">
+            </div>
+            <div class="block clear">
+              <label for="comment">Your Comment</label>
+              <textarea name="comment" id="comment" cols="25" rows="10"></textarea>
+            </div>
+            <div>
+              <input type="submit" name="submit" value="Submit Form">
+              &nbsp;
+              <input type="reset" name="reset" value="Reset Form">
+            </div>
+          </form>
+        </div>
+        <!-- ################################################################################################ -->
       </div>
-      <!-- ################################################################################################ -->
-    </div>
     <!-- ################################################################################################ -->
     <!-- / main body -->
     <div class="clear"></div>
@@ -220,5 +194,61 @@ Licence URI: http://www.os-templates.com/template-terms
 <script src="https://national-parks.fcgit.net/statics/jquery.min.js"></script>
 <script src="https://national-parks.fcgit.net/statics/jquery.backtotop.js"></script>
 <script src="https://national-parks.fcgit.net/statics/jquery.mobilemenu.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script defer>
+  var months = ["Jan", "Feb", "Mar", "Apr", "May",
+      "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  $.ajax({
+    url: "https://national-parks.fcgit.net/api/es?index=review&size=10&parkid=2",
+    dataType: 'json',
+    async: true,
+    success: function(data) {
+      var insertion = "<ul>";
+      for(var i = 0; i < data['hits'].length; i++){
+        var date = new Date(data['hits'][i]['time'] * 1000);
+        insertion += "<li><article>" +
+            data['hits'][i]['user'] + " - " + months[date.getMonth()] +
+            " " + date.getDate() + ", " + date.getFullYear() + "<br>Rating: " +
+            data['hits'][i]['rating'] + "/5<br>" +
+            data['hits'][i]['review'] + "</article></li><hr>";
+      }
+      insertion += "</ul>";
+      document.getElementById('reviews').innerHTML += insertion
+    }
+  });
+  $.ajax({
+    url: "https://national-parks.fcgit.net/api/es?index=picture&size=10&parkid=2",
+    dataType: 'json',
+    async: true,
+    success: function(data) {
+      var insertion = "<ul>";
+      for(var i = 0; i < data['hits'].length; i++){
+        var date = new Date(data['hits'][i]['time'] * 1000);
+        insertion += "<li><article>" + data['hits'][i]['user'] +
+            " - " + months[date.getMonth()] + " " + date.getDate() +
+            ", " + date.getFullYear() + "<br><img style=\"width:50%;\" src=\"" +
+            data['hits'][i]['picture_url'] + "\">" + "</article>";
+        $.ajax({
+          url: "https://national-parks.fcgit.net/api/es?index=comment&size=10&pictureid=" + data['hits'][i]['picture_id'] ,
+          dataType: 'json',
+          async: false,
+          success: function(comment_data) {
+            insertion += "<ul>";
+            for(var i = 0; i < comment_data['hits'].length; i++){
+              var comment_date = new Date(comment_data['hits'][i]['time'] * 1000);
+              insertion += "<li><article style=\"padding-left:10%;\">" + comment_data['hits'][i]['user'] +
+                  " - " + months[comment_date.getMonth()] + " " + comment_date.getDate() +
+                  ", " + comment_date.getFullYear() + "<br>" + comment_data['hits'][i]['comment'] + "<hr></article></li>";
+            }
+            insertion += "</ul>";
+          }
+        });
+        insertion += "</li><hr>";
+      }
+      insertion += "</ul>";
+      document.getElementById('pictures').innerHTML += insertion
+    }
+  });
+</script>
 </body>
 </html>
