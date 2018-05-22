@@ -203,12 +203,12 @@ PARK ID: 1
       console.log(data['hits'][i])
       document.getElementById('reviews').innerHTML += "<ul>";
       for(var i = 0; i < data['hits'].length; i++){
-        var date = new Date(data['hits'][i]['time']);
-        document.getElementById('reviews').innerHTML += "<li>" +
+        var date = new Date(data['hits'][i]['time'] * 1000);
+        document.getElementById('reviews').innerHTML += "<li><article>" +
            data['hits'][i]['user'] + " - " + date.getMonth() +
            " " + date.getDate() + ", " + date.getFullYear() + "<br>Rating: " +
            data['hits'][i]['rating'] + "/5<br>" +
-           data['hits'][i]['review'] + "</li>";
+           data['hits'][i]['review'] + "</li></article><hr>";
       }
       document.getElementById('reviews').innerHTML += "</ul>";
     }
